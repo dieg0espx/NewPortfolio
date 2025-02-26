@@ -7,7 +7,7 @@ function ScrollAnimation({ children }) {
   const handleScroll = () => {
     if (elementRef.current) {
       const rect = elementRef.current.getBoundingClientRect();
-      const isElementVisible = rect.top < window.innerHeight - 100 && rect.bottom > 0;
+      const isElementVisible = rect.top < window.innerHeight - 50 && rect.bottom > 0;
 
       setIsVisible(isElementVisible); // Update visibility dynamically
     }
@@ -23,10 +23,10 @@ function ScrollAnimation({ children }) {
   return (
     <div
       ref={elementRef}
-      className={`w-full relative transition-all duration-700 ease-in-out transform ${
+      className={`w-full relative transition-all duration-1000 ease-in-out transform ${
         isVisible
           ? 'translate-y-0 blur-0 opacity-100'
-          : 'translate-y-10 blur-sm opacity-0'
+          : 'translate-y-40 blur-md opacity-0' // More noticeable movement
       }`}
     >
       {children}

@@ -32,6 +32,11 @@ code {
   animation: border-glow 2s infinite alternate;
 }
 
+:root {
+  --primary-color: #794FFF; /* Default primary color */
+}
+
+
 
 @tailwind base;
 @tailwind components;

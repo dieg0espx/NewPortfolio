@@ -37,6 +37,10 @@
     transform: rotate(360deg);
   }
 }
+:root {
+  --primary-color: #794FFF; /* Default primary color */
+}
+
 
 @tailwind base;
 @tailwind components;
