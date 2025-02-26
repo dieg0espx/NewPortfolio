@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Container1 from './components/Container1';
+import Container2 from './components/Container2';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-black pb-[200px]">
+      <Header />
+      <Container1 />
+      <Container2 />
+      <div
+  className="fixed bottom-0 left-0 w-[100vw] py-[200px] z-50"
+  style={{
+    background: "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,1) 100%)"
+  }}
+></div>
+
     </div>
   );
 }

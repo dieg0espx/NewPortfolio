@@ -5,9 +5,35 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes border-glow {
+  0% {
+    border-color: rgba(121, 79, 255, 0.3);
+    box-shadow: 0 0 10px rgba(121, 79, 255, 0.3);
+  }
+  50% {
+    border-color: rgba(121, 79, 255, 0.7);
+    box-shadow: 0 0 20px rgba(121, 79, 255, 0.5);
+  }
+  100% {
+    border-color: rgba(121, 79, 255, 0.3);
+    box-shadow: 0 0 10px rgba(121, 79, 255, 0.3);
+  }
+}
+
+.animate-border-glow {
+  animation: border-glow 2s infinite alternate;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
