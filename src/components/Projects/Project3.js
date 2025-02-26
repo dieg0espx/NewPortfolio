@@ -1,8 +1,8 @@
 import React from 'react'
-import insuranceProviders from '../../images/insurance_providers_cropped.png'
 import t1 from '../../images/ttfPhones/t1.webp'
 import t2 from '../../images/ttfPhones/t2.webp'
 import t3 from '../../images/ttfPhones/t3.webp'
+import takeOff from '../../images/ttfTakeoff.png'
 import ScrollAnimationSideways from '../ScrollAnimationSideways'
 import ScrollAnimation from '../ScrollAnimation'
 import DotPatternDiv from '../DotPattern'
@@ -20,9 +20,9 @@ function Project3() {
             </ScrollAnimationSideways>
             <ScrollAnimationSideways>
                 <div className='space-y-[10px]'>
-                    <p className='text-[30px] font-bold text-left text-white'>  Insurance Support in Your Hands </p>
-                    <p className='text-primary text-left text-[20px]'> React Native | Node Js | Supabase </p>
-                    <p className='text-[25px] text-gray-700 text-left'> Advici simplifies insurance claims, offering seamless mobile access to tracking, updates, and expert assistance when you need it most. </p>
+                    <p className='text-[30px] font-bold text-left text-white'>  Seamless Operations Management </p>
+                    <p className='text-primary text-left text-[20px]'> React Js | CSS | PHP | MySQL </p>
+                    <p className='text-[25px] text-gray-700 text-left'> Simplifies complex logistics. From real-time order tracking to seamless truck dispatching, this powerful tool keeps teams connected, organized, and in control. </p>
                 </div>
             </ScrollAnimationSideways>
             
@@ -31,9 +31,9 @@ function Project3() {
         <div className='grid grid-cols-[40%_60%] justify-between items-center space-x-[100px] mt-[100px] '>
             <ScrollAnimationSideways>
                 <div className='space-y-[10px]'>
-                    <p className='text-[30px] font-bold text-left text-white'> Effortless Claim Handling </p>
-                    <p className='text-primary text-left text-[20px]'> React JS | CSS | Node JS | Supabase  </p>
-                    <p className='text-[25px] text-gray-700 text-left'> Stay in control of your insurance claims with Advici’s dashboard, offering real-time tracking and expert assistance at your fingertips. </p>
+                    <p className='text-[30px] font-bold text-left text-white'> From Plans to Reality </p>
+                    <p className='text-primary text-left text-[20px]'> React JS | Python | Tailwind | PHP | MYSQL  </p>
+                    <p className='text-[25px] text-gray-700 text-left'> Upgrade your workflow with automated material calculations. The system intelligently processes blueprints, identifies requirements, and provides actionable insights. </p>
                 </div>
             </ScrollAnimationSideways>
             <ScrollAnimation>
@@ -47,11 +47,11 @@ function Project3() {
                   width: 'fit-content', 
                   border: '1px solid rgba(76, 76, 76, 0.5)',
                   borderRadius: '20px', 
-                  padding: '70px 0 0 120px',
+                  padding: '70px 30px 0 30px',
                 }}>
                     <img
-                     src={insuranceProviders}
-                     className="w-[1300px] rounded-xl transition-shadow transition-contrast duration-300 hover:shadow-[-20px_-25px_70px_5px_rgba(78,178,131,0.1)]"
+                     src={takeOff}
+                     className="w-[1300px] mx-auto rounded-t-xl transition-shadow transition-contrast duration-300 hover:shadow-[-20px_-25px_70px_5px_rgba(255,255,255,0.2)]"
                     />
                 </div>
             </ScrollAnimation>

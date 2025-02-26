@@ -20,6 +20,7 @@ import ScrollAnimation from './ScrollAnimation';
 import DotPatternDiv from './DotPattern';
 import AnimatedTextSection from './StaggeredTextAnimation';
 
+
 function Container1() {
   const images = [
     css, firebase, html, js, mysql, node, php, python, reactImg, supabase, swift, wordpress
@@ -68,9 +69,8 @@ function Container1() {
     <DotPatternDiv>
       <div className='w-[80%] max-w-[1500px] mx-auto'>
         <AnimatedTextSection />
-
         <ScrollAnimation>
-          <div className="relative bg-black flex justify-center items-center rounded-xl">
+          <div className="relative bg-black flex justify-center items-center rounded-xl ">
             <img
               src={ttfDashboard1}
               className="w-full"
