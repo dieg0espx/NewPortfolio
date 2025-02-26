@@ -40,7 +40,7 @@ function Project2() {
                 <div >
                     <img
                      src={badass}
-                     className="w-[1300px] rounded-xl transition-shadow transition-contrast duration-300 hover:shadow-[-20px_-25px_70px_5px_rgba(78,178,131,0.1)]"
+                     className="w-[1300px] rounded-xl transition-shadow transition-contrast duration-300"
                     />
                 </div>
             </ScrollAnimation>

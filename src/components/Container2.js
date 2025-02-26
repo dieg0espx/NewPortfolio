@@ -5,6 +5,7 @@ import Project2 from './Projects/Project2'
 
 import ScrollAnimationSideways from './ScrollAnimationSideways'
 import DotPatternDiv from './DotPattern'
+import Project3 from './Projects/Project3'
 
 function Container2() {
   return (
@@ -20,6 +21,7 @@ function Container2() {
                 </p>
             </div>
         </ScrollAnimation>
+        <Project3 />
         <Project1 />
         <Project2 />
     </div>

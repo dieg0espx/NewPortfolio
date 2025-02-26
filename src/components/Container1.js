@@ -18,6 +18,7 @@ import swift from '../images/languages/swift.png';
 import wordpress from '../images/languages/wordpress.png';
 import ScrollAnimation from './ScrollAnimation';
 import DotPatternDiv from './DotPattern';
+import AnimatedTextSection from './StaggeredTextAnimation';
 
 function Container1() {
   const images = [
@@ -62,28 +63,11 @@ function Container1() {
         paddingBottom: '20vh',
       }}
     >
+
+    
     <DotPatternDiv>
       <div className='w-[80%] max-w-[1500px] mx-auto'>
-        <div className="flex flex-col space-y-8">
-        <p className="text-primary">MORE THAN A PROGRAMMER</p>
-        <p className="text-white text-[67px] font-semibold">
-          Your vision, my code, our success
-        </p>
-        <p className="text-gray-700 w-[60%] mx-auto text-[25px]">
-          I specialize in creating innovative applications designed to solve
-          real-world problems. My focus is on delivering efficient, future-proof
-          solutions for modern businesses.
-        </p>
-        </div>
-
-        <div className="flex justify-center mx-auto space-x-5 my-[80px]">
-        <button className="bg-primary text-white rounded-2xl w-[200px] h-[50px] text-[20px]">
-          Contact Me
-        </button>
-        <button className="bg-gray-800 text-white rounded-2xl w-[200px] h-[50px] text-[20px] border border-gray-700">
-          Ask Me
-        </button>
-        </div>
+        <AnimatedTextSection />
 
         <ScrollAnimation>
           <div className="relative bg-black flex justify-center items-center rounded-xl">
