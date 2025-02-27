@@ -40,12 +40,12 @@ function Project1() {
       <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] items-center gap-6 sm:gap-10 md:gap-16 mt-[100px]">
         {/* Left Side - Images */}
         <ScrollAnimationSideways>
-            <div className="flex justify-start transition-all duration-500 hover:-space-x-[50px]">
-                <img src={a1} className="h-[300px] md:h-[500px] md:h-[550px] transition-all duration-500 z-0" />
+            <div className="flex justify-start transition-all duration-500">
+                <img src={a1} className="h-[300px] md:h-[550px] transition-all duration-500 z-0" />
                 <img ref={imageRef} src={a2} 
-                    className={`transition-all duration-500 z-0 ${
-                        isInView ? "h-[350px] md:h-[600px] -ml-[80px] sm:-ml-[120px] -mt-[50px] z-10" 
-                                 : "h-[300px] md:h-[500px] -ml-[80px] sm:-ml-[120px]"
+                   className={`transition-all duration-500 z-0 ${
+                    isInView ? "h-[350px] md:h-[600px] -ml-[80px] sm:-ml-[120px] -mt-[50px] z-10" 
+                             : "h-[300px] md:h-[550px] -ml-[80px] sm:-ml-[120px]"
                     }`} 
                 />
                 <img src={a3} className="h-[300px] md:h-[500px] md:h-[550px] -ml-[80px] sm:-ml-[120px] transition-all duration-500 z-0" />
