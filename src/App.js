@@ -11,11 +11,11 @@ function App() {
       <Container1 />
       <Container2 />
       <div
-  className="fixed bottom-0 left-0 w-[100vw] py-[200px] z-50"
-  style={{
-    background: "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,1) 100%)"
-  }}
-></div>
+        className="fixed bottom-0 left-0 w-[100vw] py-[150px] z-50"
+        style={{
+          background: "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,1) 100%)"
+        }}
+      ></div>
 
     </div>
   );

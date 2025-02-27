@@ -26,5 +26,15 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
+    function ({ addUtilities }) {
+      addUtilities({
+        ".mask-gradient": {
+          maskImage: "linear-gradient(black 50%, transparent)",
+          WebkitMaskImage: "linear-gradient(black 10%, transparent)",
+        },
+      }, {
+        variants: ["responsive"], // Ensures it works in all screen sizes
+      });
+    },
   ], 
 };

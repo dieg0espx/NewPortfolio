@@ -51,10 +51,12 @@ function Container1() {
     ],
   };
 
+  
+
   return (
     <div
       style={{
-        background: 'linear-gradient(0deg, rgb(0, 0, 0) 50%, rgb(21, 21, 21) 100%)',
+        background: 'linear-gradient(0deg, rgb(0, 0, 0) 70%, rgba(44, 44, 44, 0.79) 100%)',
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -73,10 +75,10 @@ function Container1() {
           <div className="relative bg-black flex justify-center items-center rounded-xl ">
             <img
               src={ttfDashboard1}
-              className="w-full"
+              className="w-full "
               style={{
                 maskImage: 'linear-gradient(black 50%, transparent)',
-                WebkitMaskImage: 'linear-gradient(black 50%, transparent)', // Safari support
+                WebkitMaskImage: 'linear-gradient(black 10%, transparent)', // Safari support
               }}
             />
           </div>

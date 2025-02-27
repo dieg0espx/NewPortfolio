@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useRef, useState } from "react";
 import t1 from '../../images/ttfPhones/t1.webp'
 import t2 from '../../images/ttfPhones/t2.webp'
 import t3 from '../../images/ttfPhones/t3.webp'
@@ -8,13 +8,65 @@ import ScrollAnimation from '../ScrollAnimation'
 import DotPatternDiv from '../DotPattern'
 
 function Project3() {
+
+    const [isInView, setIsInView] = useState(false);
+    const [isT2InView, setIsT2InView] = useState(false);
+    const imageRef = useRef(null);
+    const t2Ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            setIsInView(entry.isIntersecting);
+          },
+          { threshold: 0.8 } // Adjust threshold for triggering effect
+        );
+    
+        if (imageRef.current) {
+          observer.observe(imageRef.current);
+        }
+    
+        return () => {
+          if (imageRef.current) {
+            observer.unobserve(imageRef.current);
+          }
+        };
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            setIsT2InView(entry.isIntersecting);
+          },
+          { threshold: 0.2 } // Adjust threshold for triggering effect
+        );
+    
+        if (t2Ref.current) {
+          observer.observe(t2Ref.current);
+        }
+    
+        return () => {
+          if (t2Ref.current) {
+            observer.unobserve(t2Ref.current);
+          }
+        };
+    }, []);
+
+
   return (
    <DotPatternDiv>
       <div className='grid grid-cols-[50%_50%] justify-between items-center space-x-[100px] mt-[150px]'>
             <ScrollAnimationSideways>
                 <div className='flex justify-start transition-all duration-500 hover:-space-x-[50px]'>
                     <img src={t1} className="h-[550px] transition-all duration-500 z-0" />
-                    <img src={t2} className="h-[550px] hover:h-[600px] hover:-mt-[50px] -ml-[120px] transition-all duration-500 z-0 hover:z-10" />
+                    {/* <img src={t2} className="h-[550px] hover:h-[600px] hover:-mt-[50px] -ml-[120px] transition-all duration-500 z-0 hover:z-10" /> */}
+                    <img
+                      ref={imageRef}
+                      src={t2}
+                      className={`transition-all duration-500 z-0 ${
+                        isInView ? "h-[600px] -ml-[120px] -mt-[50px] z-10" : "h-[550px] -ml-[120px]"
+                      }`}
+                    />
                     <img src={t3} className="h-[550px] -ml-[120px] transition-all duration-500 z-0 " />\
                 </div>
             </ScrollAnimationSideways>
@@ -50,8 +102,11 @@ function Project3() {
                   padding: '70px 30px 0 30px',
                 }}>
                     <img
+                     ref={t2Ref}
                      src={takeOff}
-                     className="w-[1300px] mx-auto rounded-t-xl transition-shadow transition-contrast duration-300 hover:shadow-[-20px_-25px_70px_5px_rgba(255,255,255,0.2)]"
+                     className={`w-[1300px] mx-auto rounded-t-xl transition-shadow duration-300 ${
+                        isT2InView ? "shadow-[0px_-25px_70px_5px_rgba(255,255,255,0.15)]" : "shadow-none"
+                     }`}
                     />
                 </div>
             </ScrollAnimation>
