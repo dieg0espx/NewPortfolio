@@ -41,6 +41,10 @@
   --primary-color: #794FFF; /* Default primary color */
 }
 
+* {
+  object-fit: contain
+}
+
 
 @tailwind base;
 @tailwind components;

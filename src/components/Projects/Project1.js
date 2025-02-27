@@ -6,6 +6,7 @@ import a3 from '../../images/adviciPhones/a3.webp';
 import ScrollAnimationSideways from '../ScrollAnimationSideways';
 import ScrollAnimation from '../ScrollAnimation';
 import DotPatternDiv from '../DotPattern';
+import overlap from '../../images/overlap1.avif'
 
 function Project1() {
     const [isInView, setIsInView] = useState(false);
@@ -37,7 +38,7 @@ function Project1() {
 
   return (
    <DotPatternDiv>
-      <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] items-center gap-6 sm:gap-10 md:gap-16 mt-[100px]">
+       <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between mt-[100px] w-[100%]">
         {/* Left Side - Images */}
         <ScrollAnimationSideways>
             <div className="flex justify-start transition-all duration-500">
@@ -62,7 +63,7 @@ function Project1() {
         </ScrollAnimationSideways>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] items-center gap-6 sm:gap-10 md:gap-16 mt-[100px]">
+      <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between mt-[100px] w-[100%]">
         <ScrollAnimationSideways>
             <div className="space-y-5 sm:space-y-6">
                 <p className="text-xl sm:text-2xl md:text-3xl font-bold text-left text-white">Effortless Claim Handling </p>
@@ -87,11 +88,35 @@ function Project1() {
                 <img
                 ref={t2Ref}
                  src={insuranceProviders}
-                 className={`w-[1300px] mx-auto rounded-t-xl transition-shadow duration-300 ${
-                    isT2InView ? "shadow-[-25px_-45px_70px_5px_rgba(78,178,131,0.15)]" : "shadow-none"
+                 className={`w-[1300px] mx-auto rounded-t-xl rounded-br-3xl transition-shadow duration-300 ${
+                    isT2InView ? "shadow-[0px_-25px_70px_5px_rgba(255,255,255,0.13)]" : "shadow-none"
                  }`}
                 />
             </div>
+            <ScrollAnimation>
+            <div 
+                style={{
+                  background: 'linear-gradient(0deg, rgb(0, 0, 0) 50%, rgb(21, 21, 21) 100%)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  width: 'fit-content', 
+                  border: '1px solid rgba(76, 76, 76, 0.5)',
+                  borderRadius: '10px',
+                  padding:'15px 20px',
+                  marginTop: '-25%',
+                  marginLeft : '-5%',
+                  position: 'relative'
+                }}
+            >
+            <img 
+                src={overlap}
+                alt="Description"
+                className="w-[150px] md:w-[300px]"
+            />
+            </div>
+            </ScrollAnimation>
         </ScrollAnimation>
       </div>
    </DotPatternDiv>

@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Container1 from './components/Container1';
 import Container2 from './components/Container2';
+import Container3 from './components/Container3';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Container1 />
       <Container2 />
+      <Container3 />
       <div
         className="fixed bottom-0 left-0 w-[100vw] py-[150px] z-50"
         style={{

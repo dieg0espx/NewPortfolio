@@ -6,7 +6,7 @@ import Project3 from './Projects/Project3';
 
 function Container2() {
   return (
-    <div className="bg-black w-[90%] max-w-[1500px] mx-auto px-4 md:px-10">
+    <div className="bg-black w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto">
       <ScrollAnimation>
         <div className="flex flex-col space-y-6 sm:space-y-8 lg:space-y-10 text-center">
           <p className="text-primary text-lg sm:text-xl">CODE IN MOTION</p>

@@ -55,7 +55,7 @@ function Project2() {
 
   return (
     <DotPatternDiv>
-        <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] items-center gap-6 sm:gap-10 md:gap-16 mt-[100px]">
+         <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between mt-[100px] w-[100%]">
             <ScrollAnimationSideways>
             <div className="flex justify-start transition-all duration-500">
               <img src={b2} className="h-[300px] md:h-[550px] transition-all duration-500 z-0" />
@@ -77,7 +77,7 @@ function Project2() {
             </ScrollAnimationSideways>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] items-center gap-6 sm:gap-10 md:gap-16 mt-[100px]">
+        <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between mt-[100px] w-[100%]">
             <ScrollAnimationSideways>
                 <div className="space-y-5 sm:space-y-6">
                   <p className="text-xl sm:text-2xl md:text-3xl font-bold text-left text-white"> BBQ Shopping, Reinvented </p>
@@ -103,10 +103,11 @@ function Project2() {
                      ref={t2Ref}
                      src={badass}
                      className={`w-[1300px] mx-auto rounded-t-sm lg:rounded-t-xl transition-shadow duration-300 ${
-                        isT2InView ? "shadow-[0px_-25px_70px_5px_rgba(170,13,34,0.8)]" : "shadow-none"
+                        isT2InView ? "shadow-[0px_-25px_70px_5px_rgba(255,255,255,0.3)]" : "shadow-none"
                      }`}
                     />
                 </div>
+
             </ScrollAnimation>
         </div>
     </DotPatternDiv>

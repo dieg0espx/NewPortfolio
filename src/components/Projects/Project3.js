@@ -6,6 +6,7 @@ import takeOff from '../../images/ttfTakeoff.png'
 import ScrollAnimationSideways from '../ScrollAnimationSideways'
 import ScrollAnimation from '../ScrollAnimation'
 import DotPatternDiv from '../DotPattern'
+import overlap from '../../images/overlap2.png'
 
 function Project3() {
 
@@ -55,7 +56,7 @@ function Project3() {
 
   return (
    <DotPatternDiv>
-      <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] items-center gap-6 sm:gap-10 md:gap-16 mt-[100px]">
+        <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between mt-[100px] w-[100%]">
             <ScrollAnimationSideways>
               <div className="flex justify-start transition-all duration-500">
                   <img src={t1} className="h-[300px] md:h-[550px] transition-all duration-500 z-0" />
@@ -78,7 +79,7 @@ function Project3() {
             
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] items-center gap-6 sm:gap-10 md:gap-16 mt-[100px]">
+        <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between mt-[100px] w-[100%]">
             <ScrollAnimationSideways>
                 <div className="space-y-5 sm:space-y-6">
                   <p className="text-xl sm:text-2xl md:text-3xl font-bold text-left text-white"> From Plans to Reality </p>
@@ -104,10 +105,34 @@ function Project3() {
                      ref={t2Ref}
                      src={takeOff}
                      className={`w-[1300px] mx-auto rounded-t-sm lg:rounded-t-xl transition-shadow duration-300 ${
-                        isT2InView ? "shadow-[0px_-25px_70px_5px_rgba(237,216,6,0.2)]" : "shadow-none"
+                        isT2InView ? "shadow-[0px_-25px_70px_5px_rgba(255,255,255,0.13)]" : "shadow-none"
                      }`}
                     />
                 </div>
+                <ScrollAnimation>
+                  <div 
+                      style={{
+                        background: 'linear-gradient(0deg, rgb(0, 0, 0) 50%, rgb(21, 21, 21) 100%)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: 'fit-content', 
+                        border: '1px solid rgba(76, 76, 76, 0.5)',
+                        borderRadius: '10px',
+                        padding:'15px 20px',
+                        marginTop: '-20%',
+                        marginLeft : '-5%',
+                        position: 'relative',
+                      }}
+                  >
+                    <img 
+                        src={overlap}
+                        alt="Description"
+                        className="w-[100px] md:w-[250px]"
+                    />
+                  </div>
+              </ScrollAnimation>
             </ScrollAnimation>
         </div>
    </DotPatternDiv>
