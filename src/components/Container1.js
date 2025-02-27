@@ -39,19 +39,17 @@ function Container1() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
         },
       },
     ],
   };
-
-  
 
   return (
     <div
@@ -66,10 +64,8 @@ function Container1() {
         paddingBottom: '20vh',
       }}
     >
-
-    
     <DotPatternDiv>
-      <div className='w-[80%] max-w-[1500px] mx-auto'>
+      <div className='w-[100%] md:w-[80%] max-w-[1500px] mx-auto'>
         <AnimatedTextSection />
         <ScrollAnimation>
           <div className="relative bg-black flex justify-center items-center rounded-xl ">
@@ -85,12 +81,12 @@ function Container1() {
         </ScrollAnimation>
 
         <ScrollAnimation>
-        <div className="mt-[100px]">
-          <p className="text-gray-700 text-[20px]">Building with expertise in</p>
+        <div className="mt-[50px] lg:mt-[80px]">
+          <p className="text-gray-700 font-semibold text-[20px]">Building with expertise in</p>
         </div>
         </ScrollAnimation>
         <ScrollAnimation>
-        <div className="w-[70%] mt-10 mx-auto">
+        <div className="w-[90%] mt-5 mx-auto">
             <Slider {...sliderSettings}>
               {images.map((img, index) => {
                 // Extract the technology name from the file path
