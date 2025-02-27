@@ -61,7 +61,7 @@ function Container1() {
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: '20vh',
-        paddingBottom: '20vh',
+        paddingBottom: '100px',
       }}
     >
     <DotPatternDiv>
