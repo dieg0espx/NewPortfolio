@@ -1,0 +1,65 @@
+[
+    {
+      "full_name": "Adam R.",
+      "company_name": "BadAssBBQs",
+      "testimonial": "Diego delivered a fully functional e-commerce website with AI features in record time. His dedication and expertise were exceptional!",
+      "stars": 5,
+      "state": "California",
+      "country": "USA",
+      "image": "images/faces/name1.png"
+    },
+    {
+      "full_name": "Dereck J.",
+      "company_name": "TTF Scaffolding",
+      "testimonial": "Diego has been instrumental in developing our dashboards and AI-powered take-off system. His technical skills are top-notch!",
+      "stars": 5,
+      "state": "British Columbia",
+      "country": "Canada",
+      "image": "images/faces/name2.png"
+    },
+    {
+      "full_name": "David T.",
+      "company_name": "BetterEvents",
+      "testimonial": "Diego developed a powerful booking system for our events. His ability to create user-friendly solutions is outstanding!",
+      "stars": 5,
+      "state": "Texas",
+      "country": "USA",
+      "image": "images/faces/name3.png"
+    },
+    {
+      "full_name": "Phill E.",
+      "company_name": "BetterStays",
+      "testimonial": "Working with Diego was a great experience. He delivered a smooth and responsive property rental platform!",
+      "stars": 5,
+      "state": "Florida",
+      "country": "USA",
+      "image": "images/faces/name4.png"
+    },
+    {
+      "full_name": "Jack D.",
+      "company_name": "TrueZenithCreative",
+      "testimonial": "Diego helped us build a sleek portfolio website that boosted our brand's visibility. Highly skilled and professional!",
+      "stars": 5,
+      "state": "New York",
+      "country": "USA",
+      "image": "images/faces/name5.png"
+    },
+    {
+      "full_name": "Carlos Méndez",
+      "company_name": "Tech Solutions MX",
+      "testimonial": "Great developer! Diego built a fast and efficient dashboard that improved our workflow significantly.",
+      "stars": 4,
+      "state": "Mexico City",
+      "country": "Mexico",
+      "image": "images/faces/name7.png"
+    },
+    {
+      "full_name": "Emma Johnson",
+      "company_name": "MarketingPros",
+      "testimonial": "Diego's web development skills helped us improve our online presence. His attention to detail is impressive!",
+      "stars": 5,
+      "state": "New York",
+      "country": "USA",
+      "image": "images/faces/name8.png"
+    }
+]

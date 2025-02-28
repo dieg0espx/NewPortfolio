@@ -47,9 +47,9 @@ export default function AnimatedTextSection() {
         <button className="bg-primary text-white rounded-2xl w-[140px] sm:w-[200px] h-[40px] sm:h-[50px] text-sm sm:text-lg hover:shadow-[0px_0px_70px_5px_rgba(121,79,255,0.7)]">
           Contact Me
         </button>
-        <button className="bg-gray-800 text-white rounded-2xl w-[140px] sm:w-[200px] h-[40px] sm:h-[50px] text-sm sm:text-lg border border-gray-700 hover:shadow-[0px_0px_70px_5px_rgba(255,255,255,0.2)]">
+        {/* <button className="bg-gray-800 text-white rounded-2xl w-[140px] sm:w-[200px] h-[40px] sm:h-[50px] text-sm sm:text-lg border border-gray-700 hover:shadow-[0px_0px_70px_5px_rgba(255,255,255,0.2)]">
           Ask Me
-        </button>
+        </button> */}
       </motion.div>
 
     </div>

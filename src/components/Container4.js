@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ScrollAnimation from "./ScrollAnimation";
 import ScrollAnimationSideways from "./ScrollAnimationSideways";
 import DotPatternDiv from "./DotPattern";
+import Testimonials from "./Testimonials";
 
 function Container4() {
   const [status, setStatus] = useState('')
@@ -200,6 +201,7 @@ function Container4() {
           </div>
         </ScrollAnimationSideways>
       </div>
+      <Testimonials />
     </DotPatternDiv>
   );
 }
