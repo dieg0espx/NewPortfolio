@@ -39,7 +39,7 @@ const quotes = [
 
 const QuoteAi = () => {
   const [thinking, setThinking] = useState(1);
-  const [quote, setQuote] = useState("");
+  const [quote, setQuote] = useState("Thinking...");
   const [usedQuotes, setUsedQuotes] = useState([]); // Track shown quotes
   const ref = useRef(null);
   const timeoutRef = useRef(null);
