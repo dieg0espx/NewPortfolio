@@ -201,7 +201,16 @@ function Container4() {
           </div>
         </ScrollAnimationSideways>
       </div>
-      <Testimonials />
+      <ScrollAnimationSideways>
+        <ScrollAnimation>
+          <Testimonials />
+        </ScrollAnimation>
+      </ScrollAnimationSideways>
+      <div className="grid grid-cols-3 mt-[50px]">
+        <a className="text-white flex flex-col "> <i class="text-[50px] bi bi-github"></i> dieg0espx </a>
+        <a className="text-white flex flex-col "> <i class="text-[50px] bi bi-envelope"></i> espinosa9mx@gmail.com </a>
+        <a className="text-white flex flex-col "> <i class="text-[50px] bi bi-linkedin"></i> Diego Espinosa </a>
+      </div>
     </DotPatternDiv>
   );
 }
