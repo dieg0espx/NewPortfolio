@@ -15,6 +15,14 @@ const textVariants = {
   }),
 };
 
+function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close menu after clicking
+    }
+  }
+
 export default function AnimatedTextSection() {
   const lines = [
     { text: "MORE THAN A PROGRAMMER", style: "text-primary text-lg sm:text-xl md:text-2xl text-center" },
@@ -44,7 +52,7 @@ export default function AnimatedTextSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
       >
-        <button className="bg-primary text-white rounded-2xl w-[140px] sm:w-[200px] h-[40px] sm:h-[50px] text-sm sm:text-lg hover:shadow-[0px_0px_70px_5px_rgba(121,79,255,0.7)]">
+        <button onClick={()=>scrollToSection('Container4')} className="bg-primary text-white rounded-2xl w-[140px] sm:w-[200px] h-[40px] sm:h-[50px] text-sm sm:text-lg hover:shadow-[0px_0px_70px_5px_rgba(121,79,255,0.7)]">
           Contact Me
         </button>
         {/* <button className="bg-gray-800 text-white rounded-2xl w-[140px] sm:w-[200px] h-[40px] sm:h-[50px] text-sm sm:text-lg border border-gray-700 hover:shadow-[0px_0px_70px_5px_rgba(255,255,255,0.2)]">
