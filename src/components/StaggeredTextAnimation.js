@@ -15,20 +15,21 @@ const textVariants = {
   }),
 };
 
-function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false); // Close menu after clicking
-    }
-  }
 
 export default function AnimatedTextSection() {
+  
   const lines = [
     { text: "MORE THAN A PROGRAMMER", style: "text-primary text-lg sm:text-xl md:text-2xl text-center" },
     { text: "Your vision, my code, our success", style: "text-white text-5xl sm:text-5xl md:text-6xl font-semibold text-center max-w-[95%] mx-auto" },
     { text: "I specialize in creating innovative applications designed to solve real-world problems. My focus is on delivering efficient, future-proof solutions for modern businesses.", style: "text-gray-700 w-[90%] sm:w-[90%] md:w-[95%] mx-auto text-lg sm:text-lg md:text-2xl text-center" },
   ];
+
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   return (
     <div className="flex flex-col space-y-10 mb-[50px] sm:mb-[80px] md:mb-[100px] px-0">
