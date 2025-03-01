@@ -40,26 +40,8 @@
       "company_name": "TrueZenithCreative",
       "testimonial": "Diego helped us build a sleek portfolio website that boosted our brand's visibility. Highly skilled and professional!",
       "stars": 5,
-      "state": "New York",
+      "state": "Texas",
       "country": "USA",
       "image": "images/faces/name5.png"
-    },
-    {
-      "full_name": "Carlos Méndez",
-      "company_name": "Tech Solutions MX",
-      "testimonial": "Great developer! Diego built a fast and efficient dashboard that improved our workflow significantly.",
-      "stars": 4,
-      "state": "Mexico City",
-      "country": "Mexico",
-      "image": "images/faces/name7.png"
-    },
-    {
-      "full_name": "Emma Johnson",
-      "company_name": "MarketingPros",
-      "testimonial": "Diego's web development skills helped us improve our online presence. His attention to detail is impressive!",
-      "stars": 5,
-      "state": "New York",
-      "country": "USA",
-      "image": "images/faces/name8.png"
     }
 ]

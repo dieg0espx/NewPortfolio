@@ -5,10 +5,10 @@ import DotPatternDiv from './DotPattern';
 import QuoteAi from '../components/QuoteAi'
 import ScrollAnimationSideways from './ScrollAnimationSideways';
 
-function Container3() {
+function Container3({id}) {
   return (
     <DotPatternDiv>
-        <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between  w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto pt-[100px]">
+        <div id={id} className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto pt-[100px]">
           <ScrollAnimation>
             <div className="flex flex-col space-y-6 sm:space-y-8 lg:space-y-10 text-left">
               <p className="text-primary text-lg sm:text-xl"> FROM LEARNING TO LEADING </p>
@@ -23,7 +23,7 @@ function Container3() {
 
           <div className="w-[100%] flex flex-col space-y-10">
             <ScrollAnimationSideways>
-            <FadeBox>
+            <FadeBox w='full'>
                 <div className='p-10'>
                     <p className='text-white text-right text-[20px] font-bold'> Web & Mobile App Development </p>
                     <p className='text-gray-700 text-right'> Cornerstone International Community College of Canada </p>
@@ -33,7 +33,7 @@ function Container3() {
             </FadeBox>
             </ScrollAnimationSideways>
             <ScrollAnimationSideways>
-            <FadeBox>
+            <FadeBox w='full'>
                 <div className='p-10'>
                     <p className='text-white text-right text-[20px] font-bold'> Online Courses </p>
                     <p className='text-gray-700 text-right'> Udemy Online </p>
@@ -44,10 +44,13 @@ function Container3() {
             </FadeBox>
             </ScrollAnimationSideways>
           </div>
+
+          <ScrollAnimation>
+            <QuoteAi />
+          </ScrollAnimation>
+
         </div>
-        <ScrollAnimation>
-          <QuoteAi />
-        </ScrollAnimation>
+      
     </DotPatternDiv>
   );
 }

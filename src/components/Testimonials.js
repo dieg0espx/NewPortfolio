@@ -17,6 +17,7 @@ const Testimonials = () => {
     autoplay: true,
     autoplaySpeed: 3000, // Adjust speed
     pauseOnHover: false,
+    
     responsive: [
       {
         breakpoint: 1024,
@@ -30,10 +31,10 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center">
-      <Slider {...settings} className="w-[90%]">
+    <div className="w-full flex items-center justify-center ">
+      <Slider {...settings} className="w-[100%]">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="p-4">
+          <div key={index} className="flex-shrink-0 w-full md:w-auto px-2">
             <FadeBox>
               <div className="text-white rounded-lg p-8 h-[400px] flex flex-col justify-end text-right "> 
                 <img 

@@ -4,8 +4,8 @@ import ScrollAnimationSideways from "./ScrollAnimationSideways";
 import DotPatternDiv from "./DotPattern";
 import Testimonials from "./Testimonials";
 
-function Container4() {
-  const [status, setStatus] = useState('')
+function Container4({id}) {
+  const [status, setStatus] = useState()
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     name: "",
@@ -93,7 +93,7 @@ function Container4() {
 
   return (
     <DotPatternDiv>
-      <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto pt-[100px] mb-[100px]">
+      <div id={id} className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto pt-[100px] mb-[50px]">
         <ScrollAnimation>
           <div className="flex flex-col space-y-6 sm:space-y-8 lg:space-y-10 text-left">
             <p className="text-primary text-lg sm:text-xl"> NEED A PROBLEM SOLVER? </p>
@@ -108,7 +108,7 @@ function Container4() {
         <ScrollAnimationSideways>
           <div className="w-[100%] flex flex-col">
             <form onSubmit={handleSubmit} className="space-y-3 pb-[20px] border border-[rgba(76,76,76,0.5)] rounded-lg bg-black">
-              <div className="flex flex-row justify-between items-center border-b border-[rgba(76,76,76,0.5)] py-3 px-10">
+              <div className="block md:flex flex-row justify-between items-center border-b border-[rgba(76,76,76,0.5)] py-3 px-10">
                 <p className="text-white  text-left text-[30px] font-bold"> Send Message</p>
                 {status && (
                   <p className="text-gray-600 flex items-center gap-3">
@@ -119,7 +119,7 @@ function Container4() {
                   </p>                
                 )}
               </div>
-              <div className="grid grid-cols-2 w-[90%] mx-auto gap-5">
+              <div className="block md:grid grid-cols-2 w-[90%] mx-auto gap-5 space-y-[12px] md:space-y-0">
                 <div>
                   <input
                     type="text"
@@ -146,7 +146,7 @@ function Container4() {
                   {errors.company && <p className="text-red-500 text-sm">{errors.company}</p>}
                 </div>
               </div>
-              <div className="grid grid-cols-2 w-[90%] mx-auto gap-5">
+              <div className="block md:grid grid-cols-2 w-[90%] mx-auto gap-5 space-y-[12px] md:space-y-0">
                 <div>
                   <input
                     type="email"
@@ -201,16 +201,16 @@ function Container4() {
           </div>
         </ScrollAnimationSideways>
       </div>
-      <ScrollAnimationSideways>
-        <ScrollAnimation>
-          <Testimonials />
-        </ScrollAnimation>
-      </ScrollAnimationSideways>
-      <div className="grid grid-cols-3 mt-[50px]">
-        <a className="text-white flex flex-col "> <i class="text-[50px] bi bi-github"></i> dieg0espx </a>
-        <a className="text-white flex flex-col "> <i class="text-[50px] bi bi-envelope"></i> espinosa9mx@gmail.com </a>
-        <a className="text-white flex flex-col "> <i class="text-[50px] bi bi-linkedin"></i> Diego Espinosa </a>
+      <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto">
+        <ScrollAnimationSideways w='full'>
+          <ScrollAnimation>
+            <Testimonials />
+          </ScrollAnimation>
+        </ScrollAnimationSideways>
       </div>
+
+
+      
     </DotPatternDiv>
   );
 }

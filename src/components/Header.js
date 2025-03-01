@@ -12,11 +12,18 @@ function Header() {
         setIsMenuOpen(false);
       }
     };
-  
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
-  
+
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close menu after clicking
+    }
+  }
 
   return (
     <div className="fixed top-5 w-full z-50">
@@ -31,15 +38,25 @@ function Header() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-10">
-          <p className="text-[18px] text-white hover:text-primary font-light cursor-pointer">Home</p>
-          <p className="text-[18px] text-white hover:text-primary font-light cursor-pointer">Education</p>
-          <p className="text-[18px] text-white hover:text-primary font-light cursor-pointer">Experience</p>
-          <p className="text-[18px] text-white hover:text-primary font-light cursor-pointer">Contact</p>
+          <p className="text-[18px] text-white hover:text-primary font-light cursor-pointer" onClick={() => scrollToSection('container1')}>Home</p>
+          <p className="text-[18px] text-white hover:text-primary font-light cursor-pointer" onClick={() => scrollToSection('container3')}>Education</p>
+          <p className="text-[18px] text-white hover:text-primary font-light cursor-pointer" onClick={() => scrollToSection('container2')}>Experience</p>
+          <p className="text-[18px] text-white hover:text-primary font-light cursor-pointer" onClick={() => scrollToSection('container4')}>Contact</p>
         </div>
 
-        {/* Contact Button - Desktop */}
+        {/* Contact Buttons - Desktop */}
         <div className="hidden lg:flex">
-          <button className="bg-primary px-5 py-1 rounded-lg font-semibold text-[15px]">Contact Me</button>
+          <div className="grid grid-cols-3 gap-5">
+            <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="https://github.com/dieg0espx" target="_blank" rel="noopener noreferrer"> 
+              <i className="bi bi-github"></i> 
+            </a>
+            <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="https://www.linkedin.com/in/dieg0espx/" target="_blank" rel="noopener noreferrer"> 
+              <i className="bi bi-linkedin"></i>
+            </a>
+            <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="mailto:espinosa9mx@gmail.com"> 
+              <i className="bi bi-envelope"></i> 
+            </a>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -51,19 +68,31 @@ function Header() {
       </div>
 
       {/* Mobile Sidebar Menu */}
-      <div className={`fixed top-0 left-0 h-full w-[250px] bg-black/90 backdrop-blur-lg shadow-lg transform transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`} id="mobile-menu">
+      <div className={`fixed top-0 left-0 h-full w-[250px] bg-black/85 backdrop-blur-lg shadow-lg transform transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`} id="mobile-menu">
         {/* Close Button */}
         <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-5 text-white text-[24px]">
           <i className="bi bi-x-lg"></i>
         </button>
 
-        {/* Menu Items */}
+        {/* Menu Items - Mobile */}
         <div className="flex flex-col items-start space-y-6 p-10 pt-16 text-white text-[18px]">
-          <p className="hover:text-primary cursor-pointer" onClick={() => setIsMenuOpen(false)}>Home</p>
-          <p className="hover:text-primary cursor-pointer" onClick={() => setIsMenuOpen(false)}>Education</p>
-          <p className="hover:text-primary cursor-pointer" onClick={() => setIsMenuOpen(false)}>Experience</p>
-          <p className="hover:text-primary cursor-pointer" onClick={() => setIsMenuOpen(false)}>Contact</p>
-          <button className="bg-primary px-5 py-2 rounded-lg font-semibold text-[18px] mt-4 w-full" onClick={() => setIsMenuOpen(false)}>Contact Me</button>
+          <p className="hover:text-primary cursor-pointer" onClick={() => scrollToSection('container1')}>Home</p>
+          <p className="hover:text-primary cursor-pointer" onClick={() => scrollToSection('container3')}>Education</p>
+          <p className="hover:text-primary cursor-pointer" onClick={() => scrollToSection('container2')}>Experience</p>
+          <p className="hover:text-primary cursor-pointer" onClick={() => scrollToSection('container4')}>Contact</p>
+
+          {/* Social Links */}
+          <div className="grid grid-cols-3 gap-5">
+            <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="https://github.com/dieg0espx" target="_blank" rel="noopener noreferrer"> 
+              <i className="bi bi-github"></i> 
+            </a>
+            <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="https://www.linkedin.com/in/dieg0espx/" target="_blank" rel="noopener noreferrer"> 
+              <i className="bi bi-linkedin"></i>
+            </a>
+            <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="mailto:espinosa9mx@gmail.com"> 
+              <i className="bi bi-envelope"></i> 
+            </a>
+          </div>
         </div>
       </div>
     </div>

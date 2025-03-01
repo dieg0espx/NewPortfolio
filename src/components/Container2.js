@@ -4,9 +4,9 @@ import Project1 from './Projects/Project1';
 import Project2 from './Projects/Project2';
 import Project3 from './Projects/Project3';
 
-function Container2() {
+function Container2({ id }){
   return (
-    <div className="bg-black w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto">
+    <div id={id} className="bg-black w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto">
       <ScrollAnimation>
         <div className="flex flex-col space-y-6 sm:space-y-8 lg:space-y-10 text-center">
           <p className="text-primary text-lg sm:text-xl">CODE IN MOTION</p>

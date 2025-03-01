@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-function ScrollAnimationSideways({ children, direction = 'left' }) {
+function ScrollAnimationSideways({ children, direction = 'left'}) {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
 

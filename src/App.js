@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="App bg-black pb-[200px]">
       <Header />
-      <Container1 />
-      <Container2 />
-      <Container3 />
-      <Container4 />
+      <Container1 id="container1"/>
+      <Container2 id="container2"/>
+      <Container3 id="container3"/>
+      <Container4 id="container4"/>
       <div
         className="fixed bottom-0 left-0 w-[100vw] py-[150px] z-50"
         style={{

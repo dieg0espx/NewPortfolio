@@ -86,7 +86,7 @@ const QuoteAi = () => {
 
 
   return (
-    <div ref={ref} className="relative w-[90%] max-w-[1500px] mx-auto text-center mt-[50px] bg-black">
+    <div ref={ref} className="bg-black">
         <div className="border border-[rgba(76,76,76,0.5)] rounded-lg ">
          <div className="border-b border-[rgba(76,76,76,0.5)] flex items-center px-5 py-3">
           <img src={logo} className="w-[30px] mr-4"/>

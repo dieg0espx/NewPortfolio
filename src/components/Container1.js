@@ -21,7 +21,7 @@ import DotPatternDiv from './DotPattern';
 import AnimatedTextSection from './StaggeredTextAnimation';
 
 
-function Container1() {
+function Container1({ id }){
   const images = [
     css, firebase, html, js, mysql, node, php, python, reactImg, supabase, swift, wordpress
   ];
@@ -63,6 +63,7 @@ function Container1() {
         paddingTop: '20vh',
         paddingBottom: '100px',
       }}
+      id={id}
     >
     <DotPatternDiv>
       <div className='w-[100%] md:w-[80%] max-w-[1500px] mx-auto'>
@@ -97,7 +98,7 @@ function Container1() {
                     <img
                       src={img}
                       alt={`Tech ${index}`}
-                      className="h-[80px] mx-auto object-contain opacity-50"
+                      className="h-[50px] md:h-[80px] mx-auto object-contain opacity-50"
                       style={{
                         maskImage: 'linear-gradient(black 50%, transparent)',
                       }}

@@ -1,8 +1,9 @@
 import React from 'react'
 
-function FadeBox({children}) {
+function FadeBox({children, w}) {
   return (
     <div
+        className={w == 'full' ? 'w-[100%]' : 'w-auto'}
         style={{
           background: 'linear-gradient(0deg, rgb(0, 0, 0) 50%, rgb(21, 21, 21) 100%)',
           alignItems: 'center', 
