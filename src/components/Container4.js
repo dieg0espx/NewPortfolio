@@ -208,9 +208,6 @@ function Container4({id}) {
           </ScrollAnimation>
         </ScrollAnimationSideways>
       </div>
-
-
-      
     </DotPatternDiv>
   );
 }

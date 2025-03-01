@@ -8,7 +8,7 @@ import ScrollAnimationSideways from './ScrollAnimationSideways';
 function Container3({id}) {
   return (
     <DotPatternDiv>
-        <div id={id} className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto pt-[100px]">
+        <div id={id} className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:gap-[100px] items-center justify-between w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto pt-[100px] mb-[50px]">
           <ScrollAnimation>
             <div className="flex flex-col space-y-6 sm:space-y-8 lg:space-y-10 text-left">
               <p className="text-primary text-lg sm:text-xl"> FROM LEARNING TO LEADING </p>
@@ -44,13 +44,12 @@ function Container3({id}) {
             </FadeBox>
             </ScrollAnimationSideways>
           </div>
-
+        </div>
+        <div className='w-[90%] md:w-[70%] lg:w-[90%] max-w-[1500px] mx-auto '>
           <ScrollAnimation>
             <QuoteAi />
           </ScrollAnimation>
-
         </div>
-      
     </DotPatternDiv>
   );
 }
