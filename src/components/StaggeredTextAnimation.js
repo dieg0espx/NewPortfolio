@@ -32,7 +32,7 @@ export default function AnimatedTextSection() {
   }
 
   return (
-    <div className="flex flex-col space-y-10 mb-[50px] sm:mb-[80px] md:mb-[100px] px-0">
+    <div className="flex flex-col space-y-10 mb-[50px] sm:mb-[80px] md:mb-[100px] px-0 -mt-[80px] md:-mt-0">
       {lines.map((line, i) => (
         <motion.p
           key={i}
