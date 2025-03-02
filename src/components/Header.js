@@ -86,7 +86,7 @@ function Header() {
             <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="https://github.com/dieg0espx" target="_blank" rel="noopener noreferrer"> 
               <i className="bi bi-github"></i> 
             </a>
-            <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="https://www.linkedin.com/in/dieg0espx/" target="_blank" rel="noopener noreferrer"> 
+            <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="https://www.linkedin.com/in/devDiegoE/" target="_blank" rel="noopener noreferrer"> 
               <i className="bi bi-linkedin"></i>
             </a>
             <a className="text-[20px] text-gray-500 hover:text-white flex flex-col" href="mailto:espinosa9mx@gmail.com"> 
