@@ -22,7 +22,7 @@ function Container2({ id }){
       {/* Projects Section */}
       <div className="flex flex-col gap-16 sm:gap-20 mt-10">
         <Project3 />
-        <Project1 />
+        {/* <Project1 /> */}
         <Project2 />
       </div>
     </div>
