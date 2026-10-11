@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Diego Espinosa — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React (Create React App) + Tailwind portfolio showcasing selected development work.
 
-## Available Scripts
+## Running it
 
-In the project directory, you can run:
+```bash
+npm install
+npm start      # dev server at http://localhost:3000
+npm test       # test suite
+npm run build  # production build
+```
 
-### `npm start`
+## Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+  App.js                   page composition
+  data/projects.js         featured project records (the single source of content truth)
+  components/
+    Nav.js  Hero.js  Work.js  Approach.js  Stack.js  Education.js  Contact.js
+    ProjectFrame.js        browser/phone frame with a scrollable captured screenshot
+    CharacterMark.js       decorative marks (hidden from assistive tech)
+public/projects/           captured project screenshots (desktop + mobile)
+docs/redesign-2026/        discovery, PRD, inventory and screenshot map
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Design system
 
-### `npm test`
+The 2026 redesign implements a warm-paper visual system: `#f6f5f4` canvas, white cards with 1px
+hairline borders and no shadows, a single blue (`#0075de`) for the primary action, and accent hues
+(`#ffb110`, `#f64932`, `#62aef0`, `#02093a`) used only as card backgrounds. Type is Inter with
+negative tracking at display sizes, plus Source Serif 4 for editorial subheads. Tokens live in
+`tailwind.config.js` and `src/index.css`; the full rationale is in `docs/redesign-2026/`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Content rules
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Project copy is derived from each project's own source. No clients, metrics, dates, technologies or
+deployment links are asserted without evidence, and projects that could not be rendered say so
+explicitly rather than showing a substitute image. Previews are captured screenshots, never live
+embeds of the original sites.

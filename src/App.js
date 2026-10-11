@@ -1,27 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/Header';
-import Container1 from './components/Container1';
-import Container2 from './components/Container2';
-import Container3 from './components/Container3';
-import Container4 from './components/Container4';
-
+import React from 'react';
+import Nav from './components/Nav';
+import Hero from './components/Hero';
+import Work from './components/Work';
+import Approach from './components/Approach';
+import Stack from './components/Stack';
+import Education from './components/Education';
+import Contact from './components/Contact';
+import ProjectFrame from './components/ProjectFrame';
+import projects from './data/projects';
 
 function App() {
-  return (
-    <div className="App bg-black pb-[200px]">
-      <Header />
-      <Container1 id="container1"/>
-      <Container2 id="container2"/>
-      <Container3 id="container3"/>
-      <Container4 id="container4"/>
-      <div
-        className="fixed bottom-0 left-0 w-[100vw] py-[150px] z-50"
-        style={{
-          background: "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,1) 100%)"
-        }}
-      ></div>
+  // Lead the hero with the richest captured project.
+  const lead = projects.find((p) => p.preview.desktop);
 
+  return (
+    <div className="min-h-screen bg-paper">
+      <Nav />
+      <main>
+        <Hero projectCount={projects.length}>
+          {lead && (
+            <div className="mx-auto max-w-[1000px]">
+              <ProjectFrame
+                src={`${process.env.PUBLIC_URL}/projects/${lead.preview.desktop}`}
+                alt={`Captured screenshot of the ${lead.name} website`}
+                name={lead.name}
+                variant="browser"
+                accent="#0075de"
+              />
+            </div>
+          )}
+        </Hero>
+
+        <Stack />
+        <Work />
+        <Approach />
+        <Education />
+      </main>
+      <Contact />
     </div>
   );
 }
