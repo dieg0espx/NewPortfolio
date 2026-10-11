@@ -5,6 +5,24 @@ import ProjectFrame from '@/components/ProjectFrame';
 import { Reveal } from '@/components/Motion';
 import CallToAction from '@/components/CallToAction';
 
+/**
+ * Renders a narrative field that may be a single string or several paragraphs.
+ * Keeping the content as an array lets a case study breathe without the data
+ * file carrying any markup.
+ */
+function Prose({ body }) {
+  const paragraphs = Array.isArray(body) ? body : [body];
+  return (
+    <div className="mt-5 flex flex-col gap-4">
+      {paragraphs.map((t, i) => (
+        <p key={i} className="text-body-lg leading-[1.68] text-graphite">
+          {t}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
@@ -119,32 +137,65 @@ export default async function CaseStudyPage({ params }) {
         )}
 
         {/* ---- Narrative ---- */}
-        <section className="shell grid gap-12 pb-16 lg:grid-cols-[1fr_320px] lg:gap-20">
-          <div className="flex flex-col gap-12">
+        <section className="shell grid items-start gap-12 pb-20 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-24">
+          <div className="flex max-w-[68ch] flex-col gap-14">
             {project.problem && (
               <Reveal>
-                <h2 className="text-caption uppercase tracking-[0.12px] text-ink/35">The problem</h2>
-                <p className="mt-4 text-subheading leading-[1.55] text-ink/85">{project.problem}</p>
+                <p className="eyebrow">01 — Context</p>
+                <h2 className="mt-3 text-heading-sm font-semibold text-ink/95">The problem</h2>
+                <div className="mt-5 flex flex-col gap-4">
+                  {(Array.isArray(project.problem) ? project.problem : [project.problem]).map(
+                    (t, i) => (
+                      <p
+                        key={i}
+                        className="text-[21px] leading-[1.52] tracking-[-0.3px] text-ink/85"
+                      >
+                        {t}
+                      </p>
+                    )
+                  )}
+                </div>
               </Reveal>
             )}
 
             {project.built && (
               <Reveal>
-                <h2 className="text-caption uppercase tracking-[0.12px] text-ink/35">
-                  What was built
+                <p className="eyebrow">02 — Solution</p>
+                <h2 className="mt-3 text-heading-sm font-semibold text-ink/95">What was built</h2>
+                <Prose body={project.built} />
+              </Reveal>
+            )}
+
+            {project.pullQuote && (
+              <Reveal>
+                <blockquote className="border-l-2 border-ink/15 pl-6 font-serif text-[28px] leading-[1.38] tracking-[-0.4px] text-ink/95">
+                  {project.pullQuote}
+                </blockquote>
+              </Reveal>
+            )}
+
+            {project.decisions?.length > 0 && (
+              <Reveal>
+                <p className="eyebrow">03 — Approach</p>
+                <h2 className="mt-3 text-heading-sm font-semibold text-ink/95">
+                  Decisions that shaped it
                 </h2>
-                <p className="mt-4 text-body-lg leading-[1.62] text-graphite">{project.built}</p>
+                <dl className="mt-6 flex flex-col gap-6">
+                  {project.decisions.map((d) => (
+                    <div key={d.title} className="border-t pt-5">
+                      <dt className="text-body font-semibold text-ink">{d.title}</dt>
+                      <dd className="mt-2 text-body leading-[1.65] text-graphite">{d.body}</dd>
+                    </div>
+                  ))}
+                </dl>
               </Reveal>
             )}
 
             {project.stackNote && (
               <Reveal>
-                <h2 className="text-caption uppercase tracking-[0.12px] text-ink/35">
-                  Technical notes
-                </h2>
-                <p className="mt-4 text-body-lg leading-[1.62] text-graphite">
-                  {project.stackNote}
-                </p>
+                <p className="eyebrow">04 — Under the hood</p>
+                <h2 className="mt-3 text-heading-sm font-semibold text-ink/95">Technical notes</h2>
+                <Prose body={project.stackNote} />
               </Reveal>
             )}
 
@@ -156,9 +207,7 @@ export default async function CaseStudyPage({ params }) {
           {/* ---- Sidebar ---- */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <div className="card p-6">
-              <h2 className="text-caption uppercase tracking-[0.12px] text-ink/35">
-                Technologies
-              </h2>
+              <h2 className="eyebrow">Technologies</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {project.technologies.map((t) => (
                   <li
@@ -181,7 +230,7 @@ export default async function CaseStudyPage({ params }) {
         {screens.length > 1 && (
           <section className="shell pb-20">
             <Reveal>
-              <h2 className="text-caption uppercase tracking-[0.12px] text-ink/35">More screens</h2>
+              <h2 className="eyebrow">More screens</h2>
             </Reveal>
             <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {screens.slice(1).map((s) => (

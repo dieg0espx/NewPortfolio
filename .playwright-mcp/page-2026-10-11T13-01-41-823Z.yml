@@ -1,0 +1,141 @@
+- generic [active] [ref=f3e1]:
+  - link "Skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f3e3]:
+    - navigation "Main" [ref=f3e4]:
+      - link "D Diego Espinosa" [ref=f3e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f3e6]: D
+        - generic [ref=f3e7]: Diego Espinosa
+      - button "Open menu" [ref=f3e8]
+  - main [ref=f3e11]:
+    - generic [ref=f3e12]:
+      - paragraph [ref=f3e13]: About
+      - heading "I build the thing and the system behind it" [level=1] [ref=f3e14]
+      - paragraph [ref=f3e15]: Most of my work starts as a website and ends up as a product. A contractor needs service pages that rank, then a way to quote. A camp needs a brochure site, then registration, payments and capacity limits. I tend to end up owning both halves — the public surface and the system that keeps it running.
+    - generic [ref=f3e17]:
+      - generic [ref=f3e18]:
+        - paragraph [ref=f3e19]: "18"
+        - paragraph [ref=f3e20]: Featured projects
+      - generic [ref=f3e21]:
+        - paragraph [ref=f3e22]: "5"
+        - paragraph [ref=f3e23]: Project categories
+      - generic [ref=f3e24]:
+        - paragraph [ref=f3e25]: "2021"
+        - paragraph [ref=f3e26]: Graduated, Vancouver BC
+    - generic [ref=f3e28]:
+      - generic [ref=f3e29]:
+        - paragraph [ref=f3e30]: Background
+        - heading "From learning to leading" [level=2] [ref=f3e31]
+        - paragraph [ref=f3e32]: A foundation built on continuous learning, mastering technologies, and refining skills to turn knowledge into real-world impact.
+      - generic [ref=f3e33]:
+        - generic [ref=f3e35]:
+          - generic [ref=f3e36]:
+            - heading "Web & Mobile App Development" [level=3] [ref=f3e37]
+            - generic [ref=f3e38]: Graduated 09/2021
+          - paragraph [ref=f3e39]: Cornerstone International Community College of Canada
+          - paragraph [ref=f3e40]: Vancouver, Canada
+        - generic [ref=f3e42]:
+          - heading "Online courses" [level=3] [ref=f3e43]
+          - paragraph [ref=f3e44]: Udemy
+          - list [ref=f3e45]:
+            - listitem [ref=f3e46]:
+              - generic [aria-hidden] [ref=f3e47]: ·
+              - text: The Complete JavaScript Course
+            - listitem [ref=f3e48]:
+              - generic [aria-hidden] [ref=f3e49]: ·
+              - text: The Ultimate SEO Training + SEO for WordPress Websites
+            - listitem [ref=f3e50]:
+              - generic [aria-hidden] [ref=f3e51]: ·
+              - text: React — The Complete Guide
+    - generic [ref=f3e52]:
+      - generic [ref=f3e53]:
+        - paragraph [ref=f3e54]: Stack
+        - heading "What I reach for, and why" [level=2] [ref=f3e55]
+        - paragraph [ref=f3e56]: These are the tools actually evidenced across the projects in this portfolio — not a wish list.
+      - generic [ref=f3e57]:
+        - generic [ref=f3e59]:
+          - heading "Front end" [level=3] [ref=f3e60]
+          - list [ref=f3e61]:
+            - listitem [ref=f3e62]: React
+            - listitem [ref=f3e63]: Next.js
+            - listitem [ref=f3e64]: TypeScript
+            - listitem [ref=f3e65]: Tailwind CSS
+            - listitem [ref=f3e66]: Motion / GSAP
+            - listitem [ref=f3e67]: Astro
+        - generic [ref=f3e69]:
+          - heading "Back end & data" [level=3] [ref=f3e70]
+          - list [ref=f3e71]:
+            - listitem [ref=f3e72]: Node.js
+            - listitem [ref=f3e73]: PostgreSQL
+            - listitem [ref=f3e74]: Supabase
+            - listitem [ref=f3e75]: Prisma
+            - listitem [ref=f3e76]: MySQL
+            - listitem [ref=f3e77]: PHP
+            - listitem [ref=f3e78]: Python
+        - generic [ref=f3e80]:
+          - heading "Mobile" [level=3] [ref=f3e81]
+          - list [ref=f3e82]:
+            - listitem [ref=f3e83]: React Native
+            - listitem [ref=f3e84]: React Navigation
+            - listitem [ref=f3e85]: NativeWind
+            - listitem [ref=f3e86]: Swift
+        - generic [ref=f3e88]:
+          - heading "Platform & tooling" [level=3] [ref=f3e89]
+          - list [ref=f3e90]:
+            - listitem [ref=f3e91]: Sanity
+            - listitem [ref=f3e92]: Stripe
+            - listitem [ref=f3e93]: AWS S3
+            - listitem [ref=f3e94]: Resend
+            - listitem [ref=f3e95]: Playwright
+            - listitem [ref=f3e96]: Vitest
+            - listitem [ref=f3e97]: WordPress
+    - generic [ref=f3e100]:
+      - paragraph [ref=f3e101]: Next step
+      - heading "Have something you want built?" [level=2] [ref=f3e102]
+      - paragraph [ref=f3e103]: Happy to talk through a site, a platform, or the system behind them.
+      - generic [ref=f3e104]:
+        - link "Start a project" [ref=f3e105] [cursor=pointer]:
+          - /url: /contact
+          - text: Start a project
+          - generic [aria-hidden] [ref=f3e106]: →
+        - link "espinosa9mx@gmail.com" [ref=f3e107] [cursor=pointer]:
+          - /url: mailto:espinosa9mx@gmail.com
+  - contentinfo [ref=f3e108]:
+    - generic [ref=f3e109]:
+      - generic [ref=f3e110]:
+        - generic [ref=f3e111]:
+          - generic [ref=f3e112]: D
+          - generic [ref=f3e113]: Diego Espinosa
+        - paragraph [ref=f3e114]: Websites, dashboards and apps that businesses run on — built end to end.
+      - generic [ref=f3e115]:
+        - paragraph [ref=f3e116]: Pages
+        - list [ref=f3e117]:
+          - listitem [ref=f3e118]:
+            - link "Home" [ref=f3e119] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f3e120]:
+            - link "Work" [ref=f3e121] [cursor=pointer]:
+              - /url: /work
+          - listitem [ref=f3e122]:
+            - link "About" [ref=f3e123] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=f3e124]:
+            - link "Contact" [ref=f3e125] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=f3e126]:
+        - paragraph [ref=f3e127]: Elsewhere
+        - list [ref=f3e128]:
+          - listitem [ref=f3e129]:
+            - link "GitHub" [ref=f3e130] [cursor=pointer]:
+              - /url: https://github.com/dieg0espx
+          - listitem [ref=f3e131]:
+            - link "LinkedIn" [ref=f3e132] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/devDiegoE/
+          - listitem [ref=f3e133]:
+            - link "Email" [ref=f3e134] [cursor=pointer]:
+              - /url: mailto:espinosa9mx@gmail.com
+    - generic [ref=f3e135]:
+      - paragraph [ref=f3e136]: © 2026 Diego Espinosa
+      - paragraph [ref=f3e137]: Project previews are captured screenshots, not live embeds.
+  - alert [ref=f3e138]

@@ -50,7 +50,7 @@ export default function SiteHeader() {
     >
       <nav className="shell flex h-16 items-center justify-between" aria-label="Main">
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="flex h-7 w-7 items-center justify-center rounded-[7px] bg-ink text-[13px] font-bold text-white">
+          <span className="flex h-7 w-7 items-center justify-center rounded-buttons bg-ink text-[13px] font-bold text-white">
             D
           </span>
           <span className="text-body font-semibold tracking-[-0.3px] text-ink">Diego Espinosa</span>
@@ -128,8 +128,8 @@ export default function SiteHeader() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className={`block rounded-buttons px-2 py-3 text-subheading font-medium ${
-                      isActive(l.href) ? 'text-ink' : 'text-ink/50'
+                    className={`block rounded-buttons px-2 py-3.5 text-subheading font-medium ${
+                      isActive(l.href) ? 'text-ink' : 'text-ink/70'
                     }`}
                   >
                     {l.label}

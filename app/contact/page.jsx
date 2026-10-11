@@ -51,7 +51,7 @@ export default function ContactPage() {
                 href={c.href}
                 target={c.href.startsWith('http') ? '_blank' : undefined}
                 rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="card group flex h-full flex-col p-7 transition-all duration-200 hover:shadow-lift"
+                className="card group flex h-full flex-col p-7 transition-all duration-200 hover:-translate-y-[2px] hover:border-ink/15"
               >
                 <div className="flex items-center gap-2">
                   <span

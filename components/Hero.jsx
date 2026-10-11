@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { SplitHeadline } from './Motion';
 import ProjectFrame from './ProjectFrame';
@@ -11,6 +11,15 @@ const EASE = [0.16, 1, 0.3, 1];
 export default function Hero({ lead, projectCount }) {
   const ref = useRef(null);
   const reduce = useReducedMotion();
+  // A short frame on phones; a tall one where there is room for it.
+  const [heroFrameHeight, setHeroFrameHeight] = useState(560);
+
+  useEffect(() => {
+    const apply = () => setHeroFrameHeight(window.innerWidth < 640 ? 400 : 560);
+    apply();
+    window.addEventListener('resize', apply);
+    return () => window.removeEventListener('resize', apply);
+  }, []);
 
   // Parallax: the mockup settles as the hero scrolls away.
   const { scrollYProgress } = useScroll({
@@ -22,7 +31,7 @@ export default function Hero({ lead, projectCount }) {
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, reduce ? 1 : 0.4]);
 
   return (
-    <section ref={ref} className="shell relative pb-10 pt-16 sm:pt-24">
+    <section ref={ref} className="shell relative pb-20 pt-16 sm:pt-24">
       <div className="mx-auto max-w-[23ch] text-center sm:max-w-none">
         <motion.p
           className="eyebrow"
@@ -42,7 +51,7 @@ export default function Hero({ lead, projectCount }) {
       />
 
       <motion.p
-        className="mx-auto mt-8 max-w-[58ch] text-center font-serif text-body-lg text-graphite"
+        className="mx-auto mt-7 max-w-[34ch] text-center font-serif text-[16px] leading-[1.6] text-graphite sm:mt-8 sm:max-w-[58ch] sm:text-body-lg sm:leading-[1.56]"
         initial={reduce ? false : { opacity: 0, y: 12 }}
         animate={reduce ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.45, ease: EASE }}
@@ -68,21 +77,27 @@ export default function Hero({ lead, projectCount }) {
       </motion.div>
 
       {lead?.preview?.desktop && (
+        // Two layers on purpose: scroll-linked MotionValues in `style` would
+        // override an `animate` on the same properties, silently killing the
+        // entrance. The outer element owns the parallax, the inner the entrance.
         <motion.div
           className="mx-auto mt-16 max-w-[1040px]"
           style={reduce ? undefined : { y, scale, opacity }}
-          initial={reduce ? false : { opacity: 0, y: 36 }}
-          animate={reduce ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.7, ease: EASE }}
         >
-          <ProjectFrame
-            src={`/projects/${lead.preview.desktop}`}
-            alt={`Captured screenshot of the ${lead.name} website`}
-            name={lead.name}
-            accent="#0075de"
-            priority
-            height={560}
-          />
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 36 }}
+            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.55, ease: EASE }}
+          >
+            <ProjectFrame
+              src={`/projects/${lead.preview.desktop}`}
+              alt={`Captured screenshot of the ${lead.name} website`}
+              name={lead.name}
+              accent="#0075de"
+              priority
+              height={heroFrameHeight}
+            />
+          </motion.div>
         </motion.div>
       )}
     </section>

@@ -8,7 +8,7 @@ export default function SiteFooter() {
       <div className="shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-7 w-7 items-center justify-center rounded-[7px] bg-ink text-[13px] font-bold text-white">
+            <span className="flex h-7 w-7 items-center justify-center rounded-buttons bg-ink text-[13px] font-bold text-white">
               D
             </span>
             <span className="text-body font-semibold tracking-[-0.3px]">Diego Espinosa</span>

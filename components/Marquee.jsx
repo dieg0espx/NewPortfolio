@@ -23,7 +23,7 @@ export default function Marquee() {
   const row = [...STACK, ...STACK];
 
   return (
-    <section className="border-y bg-white py-14" aria-label="Technologies">
+    <section className="border-y bg-white py-[72px]" aria-label="Technologies">
       <p className="eyebrow shell text-center">Building with</p>
       <div className="mask-edges mt-9 overflow-hidden">
         <ul className="flex w-max animate-marquee items-center gap-14 pr-14 motion-reduce:animate-none">

@@ -94,7 +94,7 @@ export default function ProjectFrame({
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         onLoad={() => setLoaded(true)}
-        className="block w-full"
+        className="block h-auto w-full max-w-none"
       />
     </div>
   );

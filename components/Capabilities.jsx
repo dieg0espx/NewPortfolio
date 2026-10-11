@@ -29,7 +29,7 @@ const BLOCKS = [
 
 export default function Capabilities() {
   return (
-    <section className="shell py-24">
+    <section className="shell pb-[120px] pt-6">
       <Reveal>
         <p className="eyebrow">How I work</p>
         <h2 className="mt-4 max-w-[18ch] text-heading font-semibold text-ink sm:text-display-sm">

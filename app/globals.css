@@ -74,7 +74,6 @@
   /* ---- Elevation (nav + product mockups ONLY) ---- */
   --shadow-nav: 0px 0.7px 1.462px 0px rgb(0 0 0 / 0.015), 0px 3px 9px 0px rgb(0 0 0 / 0.03);
   --shadow-mockup: 0px 4px 12px rgb(0 0 0 / 0.1);
-  --shadow-lift: 0px 18px 40px -12px rgb(0 0 0 / 0.16);
 
   /* ---- Motion ---- */
   --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
@@ -231,5 +230,16 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Printing never scrolls, so scroll reveals must not hide content on paper. */
+@media print {
+  *,
+  *::before,
+  *::after {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }

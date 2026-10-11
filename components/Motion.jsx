@@ -1,23 +1,62 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 
+/** Content must never be left invisible because an animation did not run. */
+const SAFETY_MS = 2500;
+
 /**
- * True only once scroll-reveal animation can actually complete.
+ * Drives a scroll reveal that is guaranteed to end visible.
  *
- * A reveal starts at opacity 0 and is cleared when the element scrolls into
- * view. If that never happens — JS fails, the bundle is still loading, or the
- * environment has no IntersectionObserver — the content would be stranded
- * invisible. Arming on mount AND on observer support means the server-rendered
- * markup is plain and visible, and motion only takes over when it is safe.
+ * Returns `[ref, state]` where state is:
+ *   'static'  — render plain markup (SSR, reduced motion, or no observer)
+ *   'hidden'  — mounted, waiting to enter the viewport
+ *   'shown'   — reveal it
+ *
+ * Two safeguards: the server-rendered markup is always plain and opaque, so a
+ * failed or still-loading bundle shows content rather than a blank section; and
+ * once armed, a timer forces 'shown' if the element has not entered the viewport
+ * within SAFETY_MS. That covers the cases a plain `whileInView` strands —
+ * printing, screenshot and preview bots, and any context that never scrolls.
  */
-function useArmed() {
-  const [armed, setArmed] = useState(false);
+function useReveal() {
+  const ref = useRef(null);
+  const reduce = useReducedMotion();
+  const [state, setState] = useState('static');
+
   useEffect(() => {
-    if (typeof IntersectionObserver === 'function') setArmed(true);
-  }, []);
-  return armed;
+    if (reduce || typeof IntersectionObserver !== 'function') return undefined;
+
+    const el = ref.current;
+    if (!el) return undefined;
+
+    setState('hidden');
+
+    let done = false;
+    const show = () => {
+      if (done) return;
+      done = true;
+      setState('shown');
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) show();
+      },
+      { rootMargin: '0px 0px -80px 0px' }
+    );
+    observer.observe(el);
+
+    const timer = setTimeout(show, SAFETY_MS);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, [reduce]);
+
+  return [ref, state];
 }
 
 /**
@@ -30,44 +69,39 @@ function useArmed() {
 const EASE = [0.16, 1, 0.3, 1];
 
 /**
- * Fade + rise as the element scrolls into view. Fires once.
- *
- * `initial` is applied only after mount, so the server-rendered HTML is fully
- * opaque. If JS fails, is still loading, or IntersectionObserver never fires,
- * the content stays visible rather than being stranded at opacity 0.
+ * Fade + rise as the element scrolls into view. Fires once, and is guaranteed
+ * to end visible even if the viewport event never arrives (see useReveal).
  */
-export function Reveal({ children, delay = 0, y = 16, className = '', as = 'div' }) {
-  const reduce = useReducedMotion();
-  const armed = useArmed();
-  const Tag = motion[as] ?? motion.div;
+export function Reveal({ children, delay = 0, y = 16, className = '' }) {
+  const [ref, state] = useReveal();
 
-  if (reduce || !armed) return <div className={className}>{children}</div>;
-
-  return (
-    <Tag
-      className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, delay, ease: EASE }}
-    >
-      {children}
-    </Tag>
-  );
-}
-
-/** Staggers direct children on view. Pair with <Child>. */
-export function Stagger({ children, className = '', delay = 0, gap = 0.06 }) {
-  const reduce = useReducedMotion();
-  const armed = useArmed();
-  if (reduce || !armed) return <div className={className}>{children}</div>;
+  if (state === 'static') return <div className={className}>{children}</div>;
 
   return (
     <motion.div
+      ref={ref}
+      className={className}
+      initial={{ opacity: 0, y }}
+      animate={state === 'shown' ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      transition={{ duration: 0.6, delay, ease: EASE }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/** Staggers direct children once in view. Pair with <Child>. */
+export function Stagger({ children, className = '', delay = 0, gap = 0.06 }) {
+  const [ref, state] = useReveal();
+
+  if (state === 'static') return <div className={className}>{children}</div>;
+
+  return (
+    <motion.div
+      ref={ref}
       className={className}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: '-80px' }}
+      animate={state === 'shown' ? 'show' : 'hidden'}
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: gap, delayChildren: delay } },
@@ -78,11 +112,20 @@ export function Stagger({ children, className = '', delay = 0, gap = 0.06 }) {
   );
 }
 
+/**
+ * A staggered child. Reads its variant from the parent <Stagger>, so it must
+ * render plain whenever the parent does — otherwise it would stay hidden with
+ * no parent to animate it in.
+ */
 export function Child({ children, className = '', y = 14 }) {
   const reduce = useReducedMotion();
-  const armed = useArmed();
-  // Must mirror Stagger: a motion child inside a plain parent never animates in.
-  if (reduce || !armed) return <div className={className}>{children}</div>;
+  const [armed, setArmed] = useState(false);
+
+  useEffect(() => {
+    if (!reduce && typeof IntersectionObserver === 'function') setArmed(true);
+  }, [reduce]);
+
+  if (!armed) return <div className={className}>{children}</div>;
 
   return (
     <motion.div

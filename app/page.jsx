@@ -16,7 +16,7 @@ export default function HomePage() {
       <Hero lead={lead} projectCount={projects.length} />
       <Marquee />
 
-      <section className="shell py-24">
+      <section className="shell py-[120px]">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow">Selected work</p>
