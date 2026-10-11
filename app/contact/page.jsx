@@ -1,4 +1,5 @@
 import { Reveal, Stagger, Child } from '@/components/Motion';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
   title: 'Contact',
@@ -72,20 +73,30 @@ export default function ContactPage() {
           ))}
         </Stagger>
 
-        <Reveal>
-          <div className="mt-6 rounded-cards bg-midnight px-8 py-14 text-center sm:py-20">
-            <h2 className="mx-auto max-w-[20ch] text-heading font-semibold text-white">
-              Prefer to just send an email?
-            </h2>
-            <p className="mx-auto mt-4 max-w-[46ch] font-serif text-body-lg text-white/65">
-              No form, no autoresponder — it comes straight to me.
-            </p>
-            <a className="btn-primary mt-8" href="mailto:espinosa9mx@gmail.com">
-              espinosa9mx@gmail.com
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </Reveal>
+        <div className="mt-6 grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <Reveal>
+            <ContactForm />
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <div className="rounded-cards bg-midnight px-8 py-12">
+              <p className="text-caption font-medium uppercase tracking-[0.12px] text-white/45">
+                Or skip the form
+              </p>
+              <h2 className="mt-4 text-heading-sm font-semibold text-white">
+                Email me directly
+              </h2>
+              <p className="mt-4 font-serif text-body-lg leading-[1.6] text-white/65">
+                No autoresponder, no ticket queue — it comes straight to me, and I answer it
+                myself.
+              </p>
+              <a className="btn-primary mt-7" href="mailto:espinosa9mx@gmail.com">
+                espinosa9mx@gmail.com
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </Reveal>
+        </div>
       </section>
     </>
   );

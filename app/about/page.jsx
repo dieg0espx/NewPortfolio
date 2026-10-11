@@ -1,13 +1,38 @@
-import Image from 'next/image';
 import { Reveal, Stagger, Child } from '@/components/Motion';
 import CallToAction from '@/components/CallToAction';
-import projects from '@/content/projects';
 
 export const metadata = {
   title: 'About',
   description:
     'Diego Espinosa — full-stack developer. Web & Mobile App Development at Cornerstone International Community College of Canada, Vancouver.',
 };
+
+/**
+ * Every figure here is counted from the work itself — project records in the
+ * inventory and commit totals across the featured repositories. Nothing is an
+ * estimate, and nothing counts this page's own cards.
+ */
+const STATS = [
+  ['62', 'Projects built', 'Distinct, verified codebases'],
+  ['3,287', 'Commits', 'Across the 16 featured repositories'],
+  ['2021', 'Building since', 'Graduated Vancouver, BC'],
+  ['6', 'Disciplines', 'Web, commerce, dashboards, CMS, mobile, SEO'],
+];
+
+const PRINCIPLES = [
+  {
+    title: 'The brief is rarely the problem',
+    body: 'A contractor asking for a website usually needs a way to quote. A camp asking for a brochure site needs registration and capacity limits. I try to find the actual job before writing code.',
+  },
+  {
+    title: 'Hand over something they can run',
+    body: 'If a client needs a developer to change a headline, the build failed. CMS-backed content and admin areas are part of the work, not an upsell.',
+  },
+  {
+    title: 'Boring architecture, carefully applied',
+    body: 'Postgres, a typed ORM, server rendering, real tests. I would rather spend the novelty budget on the product than on the stack.',
+  },
+];
 
 const STACK_GROUPS = [
   {
@@ -29,8 +54,6 @@ const STACK_GROUPS = [
 ];
 
 export default function AboutPage() {
-  const categories = new Set(projects.map((p) => p.category));
-
   return (
     <>
       <section className="shell pb-16 pt-16 sm:pt-20">
@@ -46,16 +69,13 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section className="border-y bg-white py-14">
-        <Stagger className="shell grid gap-10 sm:grid-cols-3">
-          {[
-            [`${projects.length}`, 'Featured projects'],
-            [`${categories.size}`, 'Project categories'],
-            ['2021', 'Graduated, Vancouver BC'],
-          ].map(([n, l]) => (
+      <section className="border-y bg-white py-16">
+        <Stagger className="shell grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {STATS.map(([n, l, note]) => (
             <Child key={l}>
               <p className="text-display-sm font-semibold tracking-[-1.89px] text-ink">{n}</p>
-              <p className="mt-2 text-body-sm text-ink/50">{l}</p>
+              <p className="mt-2 text-body font-medium text-ink">{l}</p>
+              <p className="mt-1 text-caption leading-[1.45] text-ink/40">{note}</p>
             </Child>
           ))}
         </Stagger>
@@ -64,15 +84,24 @@ export default function AboutPage() {
       <section className="shell py-24">
         <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <Reveal className="lg:sticky lg:top-24 lg:self-start">
-            <p className="eyebrow">Background</p>
-            <h2 className="mt-4 text-heading font-semibold text-ink">From learning to leading</h2>
-            <p className="mt-5 font-serif text-body-lg text-graphite">
-              A foundation built on continuous learning, mastering technologies, and refining skills
-              to turn knowledge into real-world impact.
-            </p>
+            <p className="eyebrow">How I work</p>
+            <h2 className="mt-4 text-heading font-semibold text-ink">Three things I hold to</h2>
+            <dl className="mt-8 flex flex-col gap-7">
+              {PRINCIPLES.map((p) => (
+                <div key={p.title} className="border-t pt-5">
+                  <dt className="text-body font-semibold text-ink">{p.title}</dt>
+                  <dd className="mt-2 text-body leading-[1.65] text-graphite">{p.body}</dd>
+                </div>
+              ))}
+            </dl>
           </Reveal>
 
           <div className="flex flex-col gap-4">
+            <Reveal>
+              <p className="eyebrow">Background</p>
+              <h2 className="mt-4 text-heading-sm font-semibold text-ink/95">Education</h2>
+            </Reveal>
+
             <Reveal>
               <div className="card p-7">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -89,24 +118,9 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <div className="card p-7">
-                <h3 className="text-heading-sm font-bold text-ink">Online courses</h3>
-                <p className="mt-2 text-body text-graphite">Udemy</p>
-                <ul className="mt-4 flex flex-col gap-2">
-                  {[
-                    'The Complete JavaScript Course',
-                    'The Ultimate SEO Training + SEO for WordPress Websites',
-                    'React — The Complete Guide',
-                  ].map((c) => (
-                    <li key={c} className="flex gap-2.5 text-body-sm text-ink/60">
-                      <span className="text-ink/25" aria-hidden="true">
-                        ·
-                      </span>
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="text-caption leading-[1.6] text-ink/40">
+                Supplemented by ongoing coursework in JavaScript, React and technical SEO.
+              </p>
             </Reveal>
           </div>
         </div>
