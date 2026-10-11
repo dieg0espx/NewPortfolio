@@ -1,6 +1,24 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
+
+/**
+ * True only once scroll-reveal animation can actually complete.
+ *
+ * A reveal starts at opacity 0 and is cleared when the element scrolls into
+ * view. If that never happens — JS fails, the bundle is still loading, or the
+ * environment has no IntersectionObserver — the content would be stranded
+ * invisible. Arming on mount AND on observer support means the server-rendered
+ * markup is plain and visible, and motion only takes over when it is safe.
+ */
+function useArmed() {
+  const [armed, setArmed] = useState(false);
+  useEffect(() => {
+    if (typeof IntersectionObserver === 'function') setArmed(true);
+  }, []);
+  return armed;
+}
 
 /**
  * Shared motion primitives.
@@ -11,12 +29,19 @@ import { motion, useReducedMotion } from 'motion/react';
 
 const EASE = [0.16, 1, 0.3, 1];
 
-/** Fade + rise as the element scrolls into view. Fires once. */
+/**
+ * Fade + rise as the element scrolls into view. Fires once.
+ *
+ * `initial` is applied only after mount, so the server-rendered HTML is fully
+ * opaque. If JS fails, is still loading, or IntersectionObserver never fires,
+ * the content stays visible rather than being stranded at opacity 0.
+ */
 export function Reveal({ children, delay = 0, y = 16, className = '', as = 'div' }) {
   const reduce = useReducedMotion();
+  const armed = useArmed();
   const Tag = motion[as] ?? motion.div;
 
-  if (reduce) return <div className={className}>{children}</div>;
+  if (reduce || !armed) return <div className={className}>{children}</div>;
 
   return (
     <Tag
@@ -34,7 +59,8 @@ export function Reveal({ children, delay = 0, y = 16, className = '', as = 'div'
 /** Staggers direct children on view. Pair with <Child>. */
 export function Stagger({ children, className = '', delay = 0, gap = 0.06 }) {
   const reduce = useReducedMotion();
-  if (reduce) return <div className={className}>{children}</div>;
+  const armed = useArmed();
+  if (reduce || !armed) return <div className={className}>{children}</div>;
 
   return (
     <motion.div
@@ -54,7 +80,9 @@ export function Stagger({ children, className = '', delay = 0, gap = 0.06 }) {
 
 export function Child({ children, className = '', y = 14 }) {
   const reduce = useReducedMotion();
-  if (reduce) return <div className={className}>{children}</div>;
+  const armed = useArmed();
+  // Must mirror Stagger: a motion child inside a plain parent never animates in.
+  if (reduce || !armed) return <div className={className}>{children}</div>;
 
   return (
     <motion.div

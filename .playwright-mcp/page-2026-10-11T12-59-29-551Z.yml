@@ -1,0 +1,318 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main" [ref=e4]:
+      - link "D Diego Espinosa" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: D
+        - generic [ref=e7]: Diego Espinosa
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "Work" [ref=e10] [cursor=pointer]:
+            - /url: /work
+        - listitem [ref=e11]:
+          - link "About" [ref=e12] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e13]:
+          - link "Contact" [ref=e14] [cursor=pointer]:
+            - /url: /contact
+      - generic [ref=e15]:
+        - link "GitHub" [ref=e16] [cursor=pointer]:
+          - /url: https://github.com/dieg0espx
+        - link "Start a project" [ref=e17] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - paragraph [ref=e21]: Full-stack developer · San Diego
+      - heading "Your vision, my code , our success" [level=1] [ref=e22]:
+        - generic [ref=e23]: Your
+        - generic [ref=e25]: vision,
+        - generic [ref=e27]: my
+        - generic [ref=e30]:
+          - generic [ref=e31]: code
+          - text: ","
+        - generic [ref=e32]: our
+        - generic [ref=e34]: success
+      - paragraph [ref=e36]: I build the websites businesses are judged on and the systems they actually run on — quote-to-invoice platforms, booking and payment flows, role-based portals, and the native apps their teams carry into the field.
+      - generic [ref=e37]:
+        - link "View 18 projects" [ref=e38] [cursor=pointer]:
+          - /url: /work
+          - text: View 18 projects
+          - generic [aria-hidden] [ref=e39]: →
+        - link "Start a project" [ref=e40] [cursor=pointer]:
+          - /url: /contact
+      - figure "Captured preview — hover to pan" [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: Scenic Doors
+          - group "Scenic Doors — scrollable captured preview" [ref=e51]:
+            - img "Captured screenshot of the Scenic Doors website" [ref=e52]
+    - region "Technologies" [ref=e55]:
+      - paragraph [ref=e56]: Building with
+      - list [ref=e58]:
+        - listitem [ref=e59]:
+          - generic [ref=e61]: React
+        - listitem [ref=e62]:
+          - generic [ref=e64]: JavaScript
+        - listitem [ref=e65]:
+          - generic [ref=e67]: Node.js
+        - listitem [ref=e68]:
+          - generic [ref=e70]: Supabase
+        - listitem [ref=e71]:
+          - generic [ref=e73]: Python
+        - listitem [ref=e74]:
+          - generic [ref=e76]: PHP
+        - listitem [ref=e77]:
+          - generic [ref=e79]: MySQL
+        - listitem [ref=e80]:
+          - generic [ref=e82]: Firebase
+        - listitem [ref=e83]:
+          - generic [ref=e85]: HTML
+        - listitem [ref=e86]:
+          - generic [ref=e88]: CSS
+        - listitem [ref=e89]:
+          - generic [ref=e91]: Swift
+        - listitem [ref=e92]:
+          - generic [ref=e94]: WordPress
+        - listitem [ref=e95]:
+          - generic [ref=e97]: React
+        - listitem [ref=e98]:
+          - generic [ref=e100]: JavaScript
+        - listitem [ref=e101]:
+          - generic [ref=e103]: Node.js
+        - listitem [ref=e104]:
+          - generic [ref=e106]: Supabase
+        - listitem [ref=e107]:
+          - generic [ref=e109]: Python
+        - listitem [ref=e110]:
+          - generic [ref=e112]: PHP
+        - listitem [ref=e113]:
+          - generic [ref=e115]: MySQL
+        - listitem [ref=e116]:
+          - generic [ref=e118]: Firebase
+        - listitem [ref=e119]:
+          - generic [ref=e121]: HTML
+        - listitem [ref=e122]:
+          - generic [ref=e124]: CSS
+        - listitem [ref=e125]:
+          - generic [ref=e127]: Swift
+        - listitem [ref=e128]:
+          - generic [ref=e130]: WordPress
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - paragraph [ref=e134]: Selected work
+          - heading "Platforms, storefronts and the tools behind them" [level=2] [ref=e135]
+        - link "All 18 projects" [ref=e136] [cursor=pointer]:
+          - /url: /work
+          - text: All 18 projects
+          - generic [aria-hidden] [ref=e137]: →
+      - generic [ref=e138]:
+        - article [ref=e139]:
+          - generic [ref=e140]:
+            - figure "Captured preview — hover to pan" [ref=e142]:
+              - generic [ref=e143]:
+                - generic [ref=e144]: Camp Alegría
+                - group "Camp Alegría — scrollable captured preview" [ref=e151]:
+                  - img "Captured screenshot of the Camp Alegría website" [ref=e152]
+            - generic [ref=e155]:
+              - generic [ref=e156]: Platforms
+              - heading [level=3] [ref=e159]:
+                - link "Camp Alegría" [ref=e160] [cursor=pointer]:
+                  - /url: /work/camp-alegria
+              - paragraph [ref=e161]: Registration and payments for a kids camp
+              - paragraph [ref=e162]: Camp registration and management platform for hands-on camps for children ages 5–12.
+              - generic [ref=e163]:
+                - generic [ref=e164]:
+                  - term [ref=e165]: Pages
+                  - definition [ref=e166]: "57"
+                - generic [ref=e167]:
+                  - term [ref=e168]: Admin
+                  - definition [ref=e169]: Full dashboard
+                - generic [ref=e170]:
+                  - term [ref=e171]: Payments
+                  - definition [ref=e172]: Stripe + invoicing
+              - list [ref=e173]:
+                - listitem [ref=e174]: Next.js
+                - listitem [ref=e175]: Supabase
+                - listitem [ref=e176]: Stripe
+                - listitem [ref=e177]: Resend
+                - listitem [ref=e178]: Cloudinary
+                - listitem [ref=e179]: React Hook Form
+                - listitem [ref=e180]: "+3"
+              - link "Read the case study" [ref=e181] [cursor=pointer]:
+                - /url: /work/camp-alegria
+                - text: Read the case study
+                - generic [aria-hidden] [ref=e182]: →
+        - article [ref=e183]:
+          - generic [ref=e184]:
+            - figure "Loading preview…" [ref=e186]:
+              - generic [ref=e187]:
+                - generic [ref=e188]: ER Soccer Development
+                - group "ER Soccer Development — scrollable captured preview" [ref=e195]:
+                  - img "Captured screenshot of the ER Soccer Development website"
+            - generic [ref=e198]:
+              - generic [ref=e199]: Platforms
+              - heading [level=3] [ref=e202]:
+                - link "ER Soccer Development" [ref=e203] [cursor=pointer]:
+                  - /url: /work/er-soccer-development
+              - paragraph [ref=e204]: Public site plus a role-based academy CRM
+              - paragraph [ref=e205]: Marketing website and role-based staff, coach and family CRM for a San Diego youth soccer academy established in 1991.
+              - generic [ref=e206]:
+                - generic [ref=e207]:
+                  - term [ref=e208]: Portals
+                  - definition [ref=e209]: Coach / family / CRM
+                - generic [ref=e210]:
+                  - term [ref=e211]: Testing
+                  - definition [ref=e212]: Extensive suites
+                - generic [ref=e213]:
+                  - term [ref=e214]: Documents
+                  - definition [ref=e215]: Generated PDFs
+              - list [ref=e216]:
+                - listitem [ref=e217]: Next.js 15
+                - listitem [ref=e218]: React 19
+                - listitem [ref=e219]: TypeScript
+                - listitem [ref=e220]: Tailwind CSS
+                - listitem [ref=e221]: PostgreSQL
+                - listitem [ref=e222]: AWS S3
+                - listitem [ref=e223]: "+3"
+              - link "Read the case study" [ref=e224] [cursor=pointer]:
+                - /url: /work/er-soccer-development
+                - text: Read the case study
+                - generic [aria-hidden] [ref=e225]: →
+        - article [ref=e226]:
+          - generic [ref=e227]:
+            - figure "Loading preview…" [ref=e229]:
+              - generic [ref=e230]:
+                - generic [ref=e231]: SD Dumping Solutions
+                - group "SD Dumping Solutions — scrollable captured preview" [ref=e238]:
+                  - img "Captured screenshot of the SD Dumping Solutions website"
+            - generic [ref=e241]:
+              - generic [ref=e242]: Platforms
+              - heading [level=3] [ref=e245]:
+                - link "SD Dumping Solutions" [ref=e246] [cursor=pointer]:
+                  - /url: /work/sd-dumping-solutions
+              - paragraph [ref=e247]: Booking and dispatch for dumpster rental
+              - paragraph [ref=e248]: Dumpster rental booking and management platform for a San Diego roll-off company.
+              - generic [ref=e249]:
+                - generic [ref=e250]:
+                  - term [ref=e251]: Routes
+                  - definition [ref=e252]: "36"
+                - generic [ref=e253]:
+                  - term [ref=e254]: Contracts
+                  - definition [ref=e255]: E-signature
+                - generic [ref=e256]:
+                  - term [ref=e257]: Payments
+                  - definition [ref=e258]: Saved cards
+              - list [ref=e259]:
+                - listitem [ref=e260]: Next.js 16
+                - listitem [ref=e261]: React 19
+                - listitem [ref=e262]: TypeScript
+                - listitem [ref=e263]: Tailwind CSS v4
+                - listitem [ref=e264]: Radix UI
+                - listitem [ref=e265]: Supabase
+                - listitem [ref=e266]: "+1"
+              - link "Read the case study" [ref=e267] [cursor=pointer]:
+                - /url: /work/sd-dumping-solutions
+                - text: Read the case study
+                - generic [aria-hidden] [ref=e268]: →
+        - article [ref=e269]:
+          - generic [ref=e270]:
+            - generic [ref=e272]:
+              - generic [ref=e273]: Key Buyers Club
+              - generic [ref=e274]: No screenshot captured
+            - generic [ref=e275]:
+              - generic [ref=e276]: Platforms
+              - heading [level=3] [ref=e279]:
+                - link "Key Buyers Club" [ref=e280] [cursor=pointer]:
+                  - /url: /work/key-buyers-club
+              - paragraph [ref=e281]: Private off-market real estate listings
+              - paragraph [ref=e282]: Private off-market real estate listing platform with subscriber notifications and buyer interest capture.
+              - generic [ref=e283]:
+                - generic [ref=e284]:
+                  - term [ref=e285]: Areas
+                  - definition [ref=e286]: Public / admin / auth
+                - generic [ref=e287]:
+                  - term [ref=e288]: Jobs
+                  - definition [ref=e289]: Background notifications
+                - generic [ref=e290]:
+                  - term [ref=e291]: Planning
+                  - definition [ref=e292]: Written PRD
+              - list [ref=e293]:
+                - listitem [ref=e294]: Next.js
+                - listitem [ref=e295]: React
+                - listitem [ref=e296]: Supabase
+                - listitem [ref=e297]: Inngest
+                - listitem [ref=e298]: react-email
+                - listitem [ref=e299]: Radix UI
+                - listitem [ref=e300]: "+2"
+              - link "Read the case study" [ref=e301] [cursor=pointer]:
+                - /url: /work/key-buyers-club
+                - text: Read the case study
+                - generic [aria-hidden] [ref=e302]: →
+    - generic [ref=e303]:
+      - generic [ref=e304]:
+        - paragraph [ref=e305]: How I work
+        - heading "Patterns that run through the work" [level=2] [ref=e306]
+      - generic [ref=e307]:
+        - generic [ref=e309]:
+          - heading "Ship the whole product, not just the page" [level=3] [ref=e310]
+          - paragraph [ref=e311]: "Most of this work pairs a public site with the system behind it: quoting and booking, payments and invoices, admin areas, and role-based portals for staff and customers."
+        - generic [ref=e313]:
+          - heading "Content the client can actually edit" [level=3] [ref=e314]
+          - paragraph [ref=e315]: Sanity and Supabase back the sites that change often, so copy, blogs and catalogues stay editable without a developer in the loop.
+        - generic [ref=e317]:
+          - heading "Built to be found" [level=3] [ref=e318]
+          - paragraph [ref=e319]: Service and city landing pages, sitemaps, structured metadata and documented SEO audits are part of the build, not an afterthought.
+        - generic [ref=e321]:
+          - heading "Tested where it counts" [level=3] [ref=e322]
+          - paragraph [ref=e323]: The larger platforms carry unit, integration and end-to-end suites with Playwright and Vitest, plus Lighthouse checks on the CRM.
+    - generic [ref=e326]:
+      - paragraph [ref=e327]: Next step
+      - heading "Have something you want built?" [level=2] [ref=e328]
+      - paragraph [ref=e329]: Happy to talk through a site, a platform, or the system behind them.
+      - generic [ref=e330]:
+        - link "Start a project" [ref=e331] [cursor=pointer]:
+          - /url: /contact
+          - text: Start a project
+          - generic [aria-hidden] [ref=e332]: →
+        - link "espinosa9mx@gmail.com" [ref=e333] [cursor=pointer]:
+          - /url: mailto:espinosa9mx@gmail.com
+  - contentinfo [ref=e334]:
+    - generic [ref=e335]:
+      - generic [ref=e336]:
+        - generic [ref=e337]:
+          - generic [ref=e338]: D
+          - generic [ref=e339]: Diego Espinosa
+        - paragraph [ref=e340]: Websites, dashboards and apps that businesses run on — built end to end.
+      - generic [ref=e341]:
+        - paragraph [ref=e342]: Pages
+        - list [ref=e343]:
+          - listitem [ref=e344]:
+            - link "Home" [ref=e345] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e346]:
+            - link "Work" [ref=e347] [cursor=pointer]:
+              - /url: /work
+          - listitem [ref=e348]:
+            - link "About" [ref=e349] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e350]:
+            - link "Contact" [ref=e351] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e352]:
+        - paragraph [ref=e353]: Elsewhere
+        - list [ref=e354]:
+          - listitem [ref=e355]:
+            - link "GitHub" [ref=e356] [cursor=pointer]:
+              - /url: https://github.com/dieg0espx
+          - listitem [ref=e357]:
+            - link "LinkedIn" [ref=e358] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/devDiegoE/
+          - listitem [ref=e359]:
+            - link "Email" [ref=e360] [cursor=pointer]:
+              - /url: mailto:espinosa9mx@gmail.com
+    - generic [ref=e361]:
+      - paragraph [ref=e362]: © 2026 Diego Espinosa
+      - paragraph [ref=e363]: Project previews are captured screenshots, not live embeds.
+  - alert [ref=e364]

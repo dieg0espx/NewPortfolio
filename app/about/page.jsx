@@ -62,8 +62,8 @@ export default function AboutPage() {
       </section>
 
       <section className="shell py-24">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          <Reveal>
+        <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+          <Reveal className="lg:sticky lg:top-24 lg:self-start">
             <p className="eyebrow">Background</p>
             <h2 className="mt-4 text-heading font-semibold text-ink">From learning to leading</h2>
             <p className="mt-5 font-serif text-body-lg text-graphite">

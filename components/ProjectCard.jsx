@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { CATEGORIES } from '@/content/projects';
 import ProjectFrame from './ProjectFrame';
@@ -11,6 +12,8 @@ import ProjectFrame from './ProjectFrame';
  */
 export default function ProjectCard({ project, index, accent, reversed = false }) {
   const reduce = useReducedMotion();
+  const [armed, setArmed] = useState(false);
+  useEffect(() => setArmed(true), []);
   const { preview } = project;
   const hasImage = Boolean(preview.desktop || preview.screens?.length);
   const isPhone = preview.frame === 'phone';
@@ -20,8 +23,9 @@ export default function ProjectCard({ project, index, accent, reversed = false }
   return (
     <motion.article
       className="card group overflow-hidden"
-      initial={reduce ? false : { opacity: 0, y: 24 }}
-      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+      // Only start hidden once mounted, so SSR output stays visible if JS fails.
+      initial={reduce || !armed ? false : { opacity: 0, y: 24 }}
+      whileInView={reduce || !armed ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >

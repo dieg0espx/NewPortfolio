@@ -51,3 +51,31 @@ describe('WorkIndex', () => {
     });
   });
 });
+
+describe('motion never strands content', () => {
+  it('renders children visibly when IntersectionObserver is unavailable', async () => {
+    // Simulates the real failure mode: a scroll-reveal that can never fire.
+    const saved = window.IntersectionObserver;
+    delete window.IntersectionObserver;
+
+    const { Reveal, Stagger, Child } = await import('@/components/Motion');
+    render(
+      <>
+        <Reveal>
+          <p>revealed content</p>
+        </Reveal>
+        <Stagger>
+          <Child>
+            <p>staggered content</p>
+          </Child>
+        </Stagger>
+      </>
+    );
+    // Content must be in the document regardless of scroll position, so a
+    // reveal that never fires can't leave a blank section behind.
+    expect(screen.getByText('revealed content')).toBeVisible();
+    expect(screen.getByText('staggered content')).toBeVisible();
+
+    window.IntersectionObserver = saved;
+  });
+});
