@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-15T05:12:55.039Z",
+        "reason": "User asked the portfolio to match the Magic UI startup template, which is set in Inter."
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/index.css"
+        ],
+        "createdAt": "2026-10-15T05:12:56.618Z",
+        "reason": "User asked for the Magic UI startup template, whose headline is gradient-clipped."
+      }
+    ]
+  }
+}

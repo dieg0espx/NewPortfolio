@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("presents Diego Espinosa and both systems", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole("heading", { level: 1, name: /diego espinosa/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /agent dashboard/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /ai takeoff/i })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /espinosa9de@gmail.com/i })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /espinosa9mx@gmail.com/i })).toBeInTheDocument();
 });
