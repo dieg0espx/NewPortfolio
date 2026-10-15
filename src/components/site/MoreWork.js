@@ -2,13 +2,9 @@ import { moreWork } from "../../data/site";
 
 function Cards({ copy }) {
   return moreWork.map((site) => (
-    <a
+    <div
       key={`${site.title}${copy ? "-copy" : ""}`}
       className="reel-card"
-      href={site.url}
-      target="_blank"
-      rel="noreferrer"
-      tabIndex={copy ? -1 : undefined}
       aria-hidden={copy ? true : undefined}
     >
       <span className="reel-shot">
@@ -21,7 +17,7 @@ function Cards({ copy }) {
           decoding="async"
         />
       </span>
-    </a>
+    </div>
   ));
 }
 
