@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useReducedMotion } from "motion/react";
 import { ShineBorder } from "../ui/shine-border";
 
-export default function Study({ id, title, lede, body, shots, facts, links, stack = [], terminal = null }) {
+export default function Study({ id, title, lede, body, shots, facts, links, stack = [], terminal = null, ratio = null }) {
   const reduce = useReducedMotion();
   const [index, setIndex] = useState(0);
   const [failed, setFailed] = useState({});
@@ -46,7 +46,13 @@ export default function Study({ id, title, lede, body, shots, facts, links, stac
               </button>
             ))}
           </div>
-          <div className="shot" role="tabpanel" id={`${id}-panel`} aria-labelledby={`${id}-tab-${index}`}>
+          <div
+            className="shot"
+            role="tabpanel"
+            id={`${id}-panel`}
+            aria-labelledby={`${id}-tab-${index}`}
+            style={ratio ? { "--shot-ratio": `${ratio[0]} / ${ratio[1]}`, "--shot-wide": ratio[0] / ratio[1] } : undefined}
+          >
             {shots.map((item, itemIndex) =>
               failed[item.src] ? null : (
                 <img

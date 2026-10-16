@@ -45,8 +45,8 @@ export default function Hero() {
           className="hero-shot"
           src={`${process.env.PUBLIC_URL}/work/hero-devices.webp`}
           width="1280"
-          height="542"
-          alt="Agent Dashboard on a MacBook and AI Takeoff on a tablet, both running."
+          height="720"
+          alt="Three systems running at once: AI Takeoff reading a shoring plan on a desktop display, Agent Dashboard on a MacBook, and the Plan and Place floor plan editor on an iPad."
         />
       </div>
       <div className="logos">

@@ -10,6 +10,63 @@ export const PHONES = [
   { label: "+52 9999088639", href: "tel:+529999088639", flag: "🇲🇽" },
 ];
 
+export const placeShots = [
+  {
+    id: "floors",
+    label: "Floors",
+    src: asset("place-1.webp"),
+    w: 2000,
+    h: 1379,
+    alt: "The finishes step asking about floors, with Luxury vinyl plank selected among hardwood, tile, stone, concrete and carpet.",
+    note: "Eleven finishes questions, one screen each. Every one of them takes a “Not sure yet”, because on a first visit most answers are.",
+  },
+  {
+    id: "walls",
+    label: "Walls",
+    src: asset("place-2.webp"),
+    w: 2000,
+    h: 1379,
+    alt: "The same step asking about walls, with Paint selected among tile, wallpaper, wood paneling, Venetian plaster and shiplap.",
+    note: "The step list down the left stays visible, so the client can see how much is left and jump back to change an answer.",
+  },
+  {
+    id: "plan",
+    label: "Plan editor",
+    src: asset("place-3.webp"),
+    w: 2000,
+    h: 1379,
+    alt: "The floor plan editor with an L-shaped kitchen drawn, fixtures placed, a unit switcher down the right side, and twelve validation warnings flagged in red.",
+    note: "Geometry is stored in millimetres and shown in whichever unit is tapped. Validation runs live: here twelve fixtures overlap a wall, so the editor flags them in red and still lets the drawing stand.",
+  },
+  {
+    id: "before",
+    label: "Before",
+    src: asset("place-before.webp"),
+    w: 583,
+    h: 402,
+    alt: "The existing kitchen before any work: oak raised-panel cabinets, granite counters, white appliances, and beige tile floor.",
+    note: "The room as it stands, photographed on the first visit with the client in it. This is what the concept is built from.",
+  },
+  {
+    id: "after1",
+    label: "After",
+    src: asset("place-after1.webp"),
+    w: 2000,
+    h: 1379,
+    alt: "The generated concept of the same kitchen: flat cream cabinets, pale stone counters, light oak floor, and an island with stools.",
+    note: "The same room, same camera. Cabinets, counters, floor, and island follow the answers and the drawn plan, not a stock template.",
+  },
+  {
+    id: "after2",
+    label: "Second view",
+    src: asset("place-after2.webp"),
+    w: 2000,
+    h: 1379,
+    alt: "A second concept view down the length of the kitchen island toward the dining and living area beyond.",
+    note: "Four views come back per run, each from a camera computed off the room the contractor drew. An AI concept, not a construction spec.",
+  },
+];
+
 export const dashboardShots = [
   {
     id: "projects",

@@ -442,7 +442,7 @@ button, a { font-family: inherit; }
 .shot {
   position: relative;
   margin-top: 24px;
-  aspect-ratio: 2000 / 1170;
+  aspect-ratio: var(--shot-ratio, 2000 / 1170);
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -536,7 +536,7 @@ button, a { font-family: inherit; }
 
 .study-stage .shot {
   margin-top: 16px;
-  width: min(100%, calc((100svh - 240px) * 1.709));
+  width: min(100%, calc((100svh - 240px) * var(--shot-wide, 1.709)));
 }
 
 .study-stage .shot-note {
@@ -1176,6 +1176,7 @@ a.hub-value:hover { color: var(--silver); }
 }
 
 #work,
+#agent-dashboard,
 #takeoff,
 #record,
 #education,

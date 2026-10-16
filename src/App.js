@@ -6,7 +6,7 @@ import Study from "./components/site/Study";
 import MoreWork from "./components/site/MoreWork";
 import Record from "./components/site/Record";
 import Close from "./components/site/Close";
-import { dashboardShots, takeoffShots } from "./data/site";
+import { placeShots, dashboardShots, takeoffShots } from "./data/site";
 
 function App() {
   return (
@@ -20,6 +20,39 @@ function App() {
         <Hero />
         <Study
           id="work"
+          title="Plan & Place"
+          ratio={[2420, 1668]}
+          lede="A contractor photographs the kitchen the client wants gone, answers the intake beside them, draws the room to scale, and hands back a photoreal concept of the same space before leaving the driveway."
+          shots={placeShots}
+          stack={[
+            { name: "React Native", src: "react-native.svg" },
+            { name: "TypeScript", src: "typescript.svg" },
+            { name: "Gemini", src: "gemini.svg" },
+          ]}
+          body={[
+            "An iPad app for kitchen and bathroom remodels and ADUs. The intake is a questionnaire, a set of photos, and a dimensioned floor plan the contractor draws on the spot, all of it autosaved and safe to interrupt.",
+            "The plan is not decoration. Room geometry, fixture positions, and per-wall materials are sent to Gemini as structured text, and each of the four camera angles is computed from the shape of the room the contractor drew.",
+            "Nothing leaves the device unless it is ticked. Projects, photos, and concepts live in on-device storage, there is no backend and no analytics, and deleting a project deletes its files. Personal fields never enter a prompt.",
+          ]}
+          terminal={
+            <Terminal className="max-w-none">
+              <TypingAnimation>{"$ generate --project kitchen-remodel --plan attached"}</TypingAnimation>
+              <AnimatedSpan className="text-emerald-400">✔ 1 photo selected. Consent on record.</AnimatedSpan>
+              <AnimatedSpan className="text-emerald-400">✔ Plan sent as geometry. 4 cameras derived.</AnimatedSpan>
+              <AnimatedSpan className="text-emerald-400">✔ Checks passed: view count, camera distinctness, plan unchanged.</AnimatedSpan>
+              <TypingAnimation>4 concepts. Measure from the plan, never the render.</TypingAnimation>
+            </Terminal>
+          }
+          facts={[
+            { label: "App", value: "React Native and TypeScript, no Expo. Built for iPad, used on site." },
+            { label: "Intake", value: "Eight steps per project type. Autosaves on every keystroke and survives being interrupted." },
+            { label: "Plan editor", value: "SVG, millimetres under the hood, shown in mm, cm, m, ft or in. Any rectilinear room, snapping, undo, live validation." },
+            { label: "Concepts", value: "Gemini image models. Four views a run. Remodel mockup, ADU exterior, ADU interior. Revisions never overwrite the original." },
+            { label: "Storage", value: "On device only. No backend, no analytics. Deleting a project deletes its files." },
+          ]}
+        />
+        <Study
+          id="agent-dashboard"
           title="Agent Dashboard"
           lede="Queue the work, start it, leave. Claude runs review, maintenance, and recurrent tasks. The app opens the pull request."
           shots={dashboardShots}

@@ -98,7 +98,8 @@ export default function Close() {
           </a>
         </div>
         <nav className="footer-rail" aria-label="Footer">
-          <a href="#work">Agent Dashboard</a>
+          <a href="#work">Plan &amp; Place</a>
+          <a href="#agent-dashboard">Agent Dashboard</a>
           <a href="#takeoff">AI Takeoff</a>
           <a href="#record">Record</a>
           <a href={`mailto:${EMAIL}`}>Email</a>
